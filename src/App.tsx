@@ -39,7 +39,6 @@ function App() {
         <div>anotherValue is {useLessAnotherValue}</div>
       </div>
 
-      {/* <!-- Add your own useless hook example above this comment! --> */}
       <div className="card">
         <h2>useEven - a useful hook to check number is even or not.</h2>
 
@@ -61,6 +60,9 @@ function App() {
         </code>
         <div>value is nothing</div>
       </div>
+
+      {/* ⬆️ UP HERE!! */}
+      {/* <!-- Add your own useless hook example above this comment! --> */}
 
       <div className="card">
         <h2>
