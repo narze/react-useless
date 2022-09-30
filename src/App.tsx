@@ -2,10 +2,13 @@ import reactLogo from "./assets/react.svg"
 import "./App.css"
 
 import { useLess } from "./hooks/useLess"
+import { useVoid } from "./hooks/useVoid"
 
 function App() {
   const useLessValue = useLess(0)
   const useLessAnotherValue = useLess("ඞ")
+
+  const useVoidValue = useVoid()
 
   return (
     <div className="App">
@@ -33,6 +36,14 @@ function App() {
       </div>
 
       {/* <!-- Add your own useless hook example above this comment! --> */}
+      <div className="card">
+        <h2>useVoid - Does nothing, and returns nothing.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useVoid()
+        </code>
+        <div>value is nothing</div>
+      </div>
 
       <div className="card">
         <h2>
