@@ -41,3 +41,13 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (prefers-color-scheme: light) {
+  .card {
+    background-color: #f1f1f1;
+  }
+  
+  .read-the-docs {
+    color: #0f0f0f;
+  }
+}
