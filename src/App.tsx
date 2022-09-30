@@ -4,6 +4,7 @@ import "./App.css"
 import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
+import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
 
 function App() {
   const useLessValue = useLess(0)
@@ -13,6 +14,8 @@ function App() {
   const useEvenAnotherValue = useEven(1)
 
   const useVoidValue = useVoid()
+
+  const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
 
   return (
     <div className="App">
@@ -60,6 +63,15 @@ function App() {
           const value = useVoid()
         </code>
         <div>value is nothing</div>
+      </div>
+
+      <div className="card">
+        <h2>useCuteAndFunny - 😭</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
+        </code>
+        <div>value is {useCuteAndFunnyValue}</div>
       </div>
 
       <div className="card">
