@@ -2,6 +2,7 @@ import reactLogo from "./assets/react.svg"
 import "./App.css"
 
 import { useLess } from "./hooks/useLess"
+import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
 
   const useEvenValue = useEven(2)
   const useEvenAnotherValue = useEven(1)
+
+  const useVoidValue = useVoid()
 
   return (
     <div className="App">
@@ -48,6 +51,15 @@ function App() {
           const anotherValue = useEven(1)
         </code>
         <div>anotherValue is {useEvenAnotherValue.toString()}</div>
+      </div>
+
+      <div className="card">
+        <h2>useVoid - Does nothing, and returns nothing.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useVoid()
+        </code>
+        <div>value is nothing</div>
       </div>
 
       <div className="card">
