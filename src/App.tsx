@@ -2,10 +2,14 @@ import reactLogo from "./assets/react.svg"
 import "./App.css"
 
 import { useLess } from "./hooks/useLess"
+import { useEven } from "./hooks/useEven"
 
 function App() {
   const useLessValue = useLess(0)
   const useLessAnotherValue = useLess("ඞ")
+
+  const useEvenValue = useEven(2)
+  const useEvenAnotherValue = useEven(1)
 
   return (
     <div className="App">
@@ -33,6 +37,18 @@ function App() {
       </div>
 
       {/* <!-- Add your own useless hook example above this comment! --> */}
+      <div className="card">
+        <h2>useEven - a useful hook to check number is even or not.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useEven(2)
+        </code>
+        <div>value is {useEvenValue.toString()}</div>
+        <code style={{ backgroundColor: "black" }}>
+          const anotherValue = useEven(1)
+        </code>
+        <div>anotherValue is {useEvenAnotherValue.toString()}</div>
+      </div>
 
       <div className="card">
         <h2>
