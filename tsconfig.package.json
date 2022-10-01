@@ -6,5 +6,5 @@
     "noEmit": false,
     "declaration": true
   },
-  "include": ["./src/hooks/**/*", "src/vite-env.d.ts"]
+  "include": ["./src/hooks/**/*"]
 }
