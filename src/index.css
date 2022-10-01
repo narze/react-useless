@@ -18,6 +18,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#root {
+  @apply w-full;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
