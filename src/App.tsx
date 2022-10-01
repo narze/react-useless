@@ -20,6 +20,7 @@ import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
 import { useSkoy } from "./hooks/useSkoy"
+import { usePKazuya } from "./hooks/usePKazuya"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -214,6 +215,17 @@ function App() {
         },
       ],
       githubUsername: "santhitak",
+    },
+    {
+      desc: "usePKazuya - เ ก ลี ย ด ค ว า ม ห วั่ น ไ ห ว",
+      examples: [
+        {
+          code: `const value = usePKazuya("เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ")`,
+          value: usePKazuya(
+            "เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ"
+          ),
+        },
+      ],
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
