@@ -19,6 +19,20 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 
+const UseWeirdComponent = () => {
+  return (
+    <>
+      <h2>useWeird - Does something weird</h2>
+
+      <code>
+        const weird = useWeird() &lt;button style=&#123;weird&#125
+        &gt;Haha&lt;/button&gt
+      </code>
+      <button style={useWeird(12)}>Hahaha</button>
+    </>
+  )
+}
+
 function App() {
   const hooks: CardProps[] = [
     {
@@ -106,6 +120,11 @@ function App() {
       githubUsername: "b5710546232",
     },
     {
+      desc: "useWeird.",
+      examples: [UseWeirdComponent()],
+      githubUsername: "pontakornth",
+    },
+    {
       desc: "useFullStop - a useless hook that return string value with (.) full stop.",
       examples: [
         {
@@ -179,16 +198,6 @@ function App() {
       {hooks.map((props: CardProps, idx) => {
         return <Card key={idx} {...props} />
       })}
-
-      <div className="card">
-        <h2>useWeird - Does something weird</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const weird = useWeird() &lt;button style=&#123;weird&#125
-          &gt;Haha&lt;/button&gt
-        </code>
-        <button style={useWeird(12)}>Hahaha</button>
-      </div>
 
       <div className="card">
         <h2>useSalim - A hook that fetch quote from Salim API</h2>
