@@ -328,7 +328,7 @@ function App() {
       examples: [
         {
           code: `useFreeze(() => console.log('Hello Antarctica'))`,
-          value: `I don't even know`
+          value: <button onClick={() => { useFreeze(() => "Sike") }}>I bet you don't</button>
         }
       ],
       githubUsername: "pknn"
