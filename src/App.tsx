@@ -24,6 +24,7 @@ import { useRickRoll } from "./hooks/useRickRoll"
 import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
 import { useGoogle } from "./hooks/useGoogle"
+import { useUndefined } from "./hooks/useUndefined"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -268,6 +269,16 @@ function App() {
         },
       ],
       githubUsername: "ntsd",
+    },
+    {
+      desc: "useUndefined - a useless hook that returns undefined.",
+      examples: [
+        {
+          code: `const value = useUndefined()`,
+          value:  `${useUndefined()}`,
+        },
+      ],
+      githubUsername: "armsasmart",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
