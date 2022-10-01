@@ -5,6 +5,7 @@ import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
+import { useSus } from "./hooks/useSus"
 
 function App() {
   const useLessValue = useLess(0)
@@ -16,6 +17,8 @@ function App() {
   const useVoidValue = useVoid()
 
   const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
+
+  const useSusValue = useSus("createSus")
 
   return (
     <div className="App">
@@ -63,6 +66,15 @@ function App() {
         </code>
         <div>value is nothing</div>
       </div>
+
+      <div className="card">
+        <h2>useSus - ඞ</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useSus("createSus")
+        </code>
+        <div>value is {useSusValue}</div>
+      </div>      
 
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
