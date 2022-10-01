@@ -19,6 +19,7 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
+import { useConsoleLog } from "./hooks/useConsoleLog"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -203,6 +204,16 @@ function App() {
         },
       ],
       githubUsername: "narze",
+    },
+    {
+      desc: "useConsoleLog - Simply log the passed value, so you don't have to see ESLint complain about using console.log()",
+      examples: [
+        {
+          code: `const value = useConsoleLog("debug")`,
+          value: `${useConsoleLog("debug")}`,
+        },
+      ],
+      githubUsername: "kratuwu",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
