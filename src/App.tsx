@@ -28,6 +28,7 @@ import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
 import { useYoutube } from "./hooks/useYoutube"
 import { useAscii } from "./hooks/useAscii"
+import { useCoinTossRickRoll } from "./hooks/useCointossRickRoll"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -321,6 +322,16 @@ function App() {
         },
       ],
       githubUsername: "ronnapatp",
+    },
+    {
+      desc: "useCoinTossRickRoll - returns a string, 50/50 chance of returning Never gonna give you up youtube url",
+      examples: [
+        {
+          value: <a href={useCoinTossRickRoll()}>Click me</a>,
+          code: "const url = useCoinTossRickRoll()",
+        },
+      ],
+      githubUsername: "DrowningToast",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
