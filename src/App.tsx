@@ -20,6 +20,7 @@ import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
 import { useSkoy } from "./hooks/useSkoy"
+import { useGoogle } from "./hooks/useGoogle"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -214,6 +215,16 @@ function App() {
         },
       ],
       githubUsername: "santhitak",
+    },
+    {
+      desc: "useGoogle - use google please",
+      examples: [
+        {
+          code: `const googling = useGoogle()`,
+          value: <button onClick={() => { useGoogle()("Rickroll") }}>Google this</button>,
+        },
+      ],
+      githubUsername: "ntsd",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
