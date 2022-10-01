@@ -36,6 +36,10 @@
   padding: 2em;
   margin: 1em;
   background-color: #1e1e1e;
+  max-width: 80vw;
+}
+.card > code {
+  word-break: break-all;
 }
 
 .read-the-docs {
