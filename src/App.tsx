@@ -19,7 +19,7 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 
-const UseWeirdComponent = () => {
+const UseWeirdExampleComponent = () => {
   return (
     <>
       <code>
@@ -31,7 +31,7 @@ const UseWeirdComponent = () => {
   )
 }
 
-const UseSalimComponent = () => {
+const UseSalimExampleComponent = () => {
   const { quote: salimQuote, refetch: salimRefetch } = useSalim()
 
   return (
@@ -131,7 +131,7 @@ function App() {
     },
     {
       desc: "useWeird - Does something weird",
-      examples: [UseWeirdComponent()],
+      examples: [UseWeirdExampleComponent()],
       githubUsername: "pontakornth",
     },
     {
@@ -190,10 +190,11 @@ function App() {
     },
     {
       desc: "useSalim - A hook that fetch quote from Salim API",
-      examples: [UseSalimComponent()],
+      examples: [UseSalimExampleComponent()],
       githubUsername: "Leomotors",
     },
-  ]
+  ] // Add your own hooks usage above this comment (at the end of the list)
+  // Create a new component if your hook needs more customization
 
   return (
     <div className="App">
