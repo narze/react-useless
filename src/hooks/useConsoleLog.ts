@@ -1,3 +1,3 @@
 export function useConsoleLog(message: string) {
-  console.log(message);
+  console.log(message)
 }
