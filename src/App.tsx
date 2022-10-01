@@ -6,6 +6,7 @@ import { useVoid } from './hooks/useVoid';
 import { useEven } from './hooks/useEven';
 import { useCuteAndFunny } from './hooks/useCuteAndFunny';
 import { useRandomCodingStamina } from './hooks/useRandomCodingStamina';
+import { useTruthy } from './hooks/useTruthy';
 
 function App() {
   const useLessValue = useLess(0);
@@ -77,6 +78,21 @@ function App() {
           Your stamina's add up is{' '}
           <span style={{ color: 'whitesmoke' }}>
             {useRandomCodingStamina()}
+          </span>
+        </div>
+      </div>
+
+      <div className='card'>
+        <h2>useTruthy - This hook will return true to eternity.</h2>
+
+        <code style={{ backgroundColor: 'black' }}>
+          const isAccept = useTruthy();
+        </code>
+        <div>
+          A: Should we hangout to night ?<br />
+          B:&nbsp;
+          <span style={{ color: 'whitesmoke' }}>
+            {useTruthy() ? 'Yes' : 'No'}
           </span>
         </div>
       </div>
