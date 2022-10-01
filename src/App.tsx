@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom"
 import HooksLayout from "./HooksLayout"
-import { renderHookRoutes } from "./routes"
+import { firstHookRoute, renderHookRoutes } from "./routes"
 
 import reactLogo from "./assets/react.svg"
 import "./App.css"
@@ -27,7 +27,7 @@ function HomePage() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-        <Link to="/hooks" className="btn btn-primary w-40">
+        <Link to={firstHookRoute} className="btn btn-primary w-40">
           Get Started
         </Link>
         <a
