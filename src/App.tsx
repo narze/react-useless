@@ -1,20 +1,17 @@
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
+import Card, { CardProps } from "./components/Card"
+
 import { useLess } from "./hooks/useLess"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
 import { useRandomCodingStamina } from "./hooks/useRandomCodingStamina"
 import { useTruthy } from "./hooks/useTruthy"
 import { useApple } from "./hooks/useApple"
-
 import { useLogException } from "./hooks/useLogException"
-
-import Card, { CardProps } from "./components/Card"
-
 import { useSus } from "./hooks/useSus"
 import { useEmpty } from "./hooks/useEmpty"
-
 import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
 import { useWeird } from "./hooks/useWeird"
@@ -41,12 +38,14 @@ function App() {
           value: useEven(1).toString(),
         },
       ],
+      githubUsername: "rayriffy",
     },
     {
       desc: "useVoid - Does nothing, and returns nothing.",
       examples: [
         { code: "const value = useVoid()", value: "value is nothing" },
       ],
+      githubUsername: "rayriffy",
     },
     {
       desc: "useCuteAndFunny - 😭",
@@ -56,6 +55,85 @@ function App() {
           value: useCuteAndFunny("https://www.pixiv.net/en/artworks/101491852"),
         },
       ],
+      githubUsername: "rayriffy",
+    },
+    {
+      desc: "useSus - ඞ",
+      examples: [
+        {
+          code: `const value = useSus("createSus")`,
+          value: useSus(),
+        },
+      ],
+      githubUsername: "richeyphu",
+    },
+    {
+      desc: "useException - a useless hook to log message as error.",
+      examples: [
+        {
+          code: `useLogException("An error is occured")`,
+          value: useLogException("An error is occured"),
+        },
+      ],
+      githubUsername: "GGolfz",
+    },
+    {
+      desc: "useRandomCodingStamina - This hook will return beverage to add more stamina while coding.",
+      examples: [
+        {
+          code: "const beverage = useRandomCodingStamina()",
+          value: `Your stamina's add up is ${useRandomCodingStamina()}`,
+        },
+      ],
+      githubUsername: "sikkapat79",
+    },
+    {
+      desc: "useTruthy - This hook will return true to eternity.",
+      examples: [
+        {
+          code: "const isAccept = useTruthy()",
+          value: `A: Should we hangout to night ?\n
+          B: \n ${useTruthy() ? "Yes" : "No"}`,
+        },
+      ],
+      githubUsername: "sikkapat79",
+    },
+    {
+      desc: "useSmile - 😊",
+      examples: [
+        { code: "const value = useSmile('hello')", value: useSmile("hello") },
+      ],
+      githubUsername: "b5710546232",
+    },
+    {
+      desc: "useFullStop - a useless hook that return string value with (.) full stop.",
+      examples: [
+        {
+          code: `const value = useFullStop("Hello World")`,
+          value: useFullStop("Hello World"),
+        },
+      ],
+      githubUsername: "ercusz",
+    },
+    {
+      desc: "useApple - Does nothing, and returns random apple.",
+      examples: [
+        {
+          code: "const value = useApple()",
+          value: `value is either 🍎 or 🍏 : ${useApple()}`,
+        },
+      ],
+      githubUsername: "piromsurang",
+    },
+    {
+      desc: "useEmpty - a useless hook that returns empty string.",
+      examples: [
+        {
+          code: `const value = useEmpty()`,
+          value: useEmpty(),
+        },
+      ],
+      githubUsername: "armsasmart",
     },
     {
       desc: "useDivisibleByThree - an overengineered hook to check if a number is Divisible by Three or not.",
@@ -69,67 +147,7 @@ function App() {
           value: useDivisibleByThree(1233).toString(),
         },
       ],
-    },
-    {
-      desc: "useSmile - 😊",
-      examples: [
-        { code: "const value = useSmile('hello')", value: useSmile("hello") },
-      ],
-    },
-    {
-      desc: "useRandomCodingStamina - This hook will return beverage to add more stamina while coding.",
-      examples: [
-        {
-          code: "const beverage = useRandomCodingStamina()",
-          value: `Your stamina's add up is ${useRandomCodingStamina()}`,
-        },
-      ],
-    },
-    {
-      desc: "useTruthy - This hook will return true to eternity.",
-      examples: [
-        {
-          code: "const isAccept = useTruthy()",
-          value: `A: Should we hangout to night ?\n
-          B: \n ${useTruthy() ? "Yes" : "No"}`,
-        },
-      ],
-    },
-    {
-      desc: "useApple - Does nothing, and returns random apple.",
-      examples: [
-        {
-          code: "const value = useApple()",
-          value: `value is either 🍎 or 🍏 : ${useApple()}`,
-        },
-      ],
-    },
-    {
-      desc: "useSus - ඞ",
-      examples: [
-        {
-          code: `const value = useSus("createSus")`,
-          value: useSus(),
-        },
-      ],
-    },
-    {
-      desc: "useFullStop - a useless hook that return string value with (.) full stop.",
-      examples: [
-        {
-          code: `const value = useFullStop("Hello World")`,
-          value: useFullStop("Hello World"),
-        },
-      ],
-    },
-    {
-      desc: "useEmpty - a useless hook that returns empty string.",
-      examples: [
-        {
-          code: `const value = useEmpty()`,
-          value: useEmpty(),
-        },
-      ],
+      githubUsername: "Parajulibkrm",
     },
     {
       desc: "useRandom -  a useless hook that returns random number.",
@@ -139,15 +157,7 @@ function App() {
           value: useRandom(),
         },
       ],
-    },
-    {
-      desc: "useException - a useless hook to log message as error.",
-      examples: [
-        {
-          code: `useLogException("An error is occured")`,
-          value: useLogException("An error is occured"),
-        },
-      ],
+      githubUsername: "annibuliful",
     },
   ]
 
