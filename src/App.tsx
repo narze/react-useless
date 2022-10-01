@@ -19,6 +19,7 @@ import { useEmpty } from "./hooks/useEmpty"
 import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
 import { useWeird } from "./hooks/useWeird"
+import { useRandom } from "./hooks/useRandom"
 import {useDivisibleByThree} from './hooks/useDivisibleByThree'
 
 type HookProp = {
@@ -79,6 +80,8 @@ function App() {
   ]
 
   const useEmptyValue = useEmpty()
+
+  const randomValue = useRandom()
 
   return (
     <div className="App">
@@ -183,6 +186,13 @@ function App() {
 
         <code>const value = useEmpty()</code>
         <div>value is {useEmptyValue}</div>
+      </div>
+
+      <div className="card">
+        <h2>useRandom - a useless hook that returns random number.</h2>
+
+        <code>const value = useRandom()</code>
+        <div>value is {randomValue}</div>
       </div>
 
       {/* ⬆️ UP HERE!! */}
