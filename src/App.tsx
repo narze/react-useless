@@ -23,7 +23,6 @@ function App() {
   const useEvenValue = useEven(2);
   const useEvenAnotherValue = useEven(1);
 
-  const useVoidValue = useVoid();
 
   const useCuteAndFunnyValue = useCuteAndFunny(
     'https://www.pixiv.net/en/artworks/101491852'
