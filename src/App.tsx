@@ -19,6 +19,7 @@ import { useEmpty } from "./hooks/useEmpty"
 import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
 import { useWeird } from "./hooks/useWeird"
+import {useDivisibleByThree} from './hooks/useDivisibleByThree'
 
 type HookProp = {
   desc: string
@@ -62,6 +63,16 @@ function App() {
         {
           code: `const value = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')`,
           value: useCuteAndFunny("https://www.pixiv.net/en/artworks/101491852"),
+        },
+      ],
+    },
+    {
+      desc: "useDivisibleByThree - an overengineered hook to check if a number is Divisible by Three or not.",
+      examples: [
+        { code: "const value = useDivisibleByThree(200)", value: useDivisibleByThree(200).toString() },
+        {
+          code: "const anotherValue = useDivisibleByThree(1233)",
+          value: useDivisibleByThree(1233).toString(),
         },
       ],
     },
