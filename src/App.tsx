@@ -26,6 +26,7 @@ import { useSkoy } from "./hooks/useSkoy"
 import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
+import { useYoutube } from "./hooks/useYoutube"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -299,6 +300,16 @@ function App() {
         },
       ],
       githubUsername: "ntsd",
+    },
+    {
+      desc: "useYoutube - listen your favorite song on youtube",
+      examples: [
+        {
+          code: `const video = useYoutube("Never gonna give you up")`,
+          value: <button onClick={() => { useYoutube("Never gonna give you up") }}>Search on youtube</button>,
+        },
+      ],
+      githubUsername: "ronnapatp",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
