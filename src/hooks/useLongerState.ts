@@ -1,5 +1,5 @@
-import {  useState } from "react";
+import { useState } from "react"
 
 export const useLongerState = <T = unknown>(yourInput: T) => {
-  return useState(yourInput);
+  return useState(yourInput)
 }

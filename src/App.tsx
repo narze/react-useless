@@ -23,7 +23,10 @@ import { useConsoleLog } from "./hooks/useConsoleLog"
 import { useRickRoll } from "./hooks/useRickRoll"
 import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
+import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
+import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
+import { useYoutube } from "./hooks/useYoutube"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -50,7 +53,6 @@ const UseSalimExampleComponent = () => {
 }
 
 function App() {
-
   const hooks: CardProps[] = [
     {
       desc: "useLess - a useless hook that returns initial value.",
@@ -230,12 +232,22 @@ function App() {
       githubUsername: "kratuwu",
     },
     {
+      desc: "useChanochaBrainCells - Returns the number of his brain cells, 84000",
+      examples: [
+        {
+          code: `const value = useChanochaBrainCells()`,
+          value: `${useChanochaBrainCells()}`,
+        },
+      ],
+      githubUsername: "kratuwu",
+    },
+    {
       desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
       examples: [
         {
           code: "const [countLongerState , setCountLongerState] = useLongerState[0]",
-          value: `Current count is ${useLongerState(0)[0]}`
-        }
+          value: `Current count is ${useLongerState(0)[0]}`,
+        },
       ],
       githubUsername: "sikkapat79",
     },
@@ -250,24 +262,54 @@ function App() {
       githubUsername: "santhitak",
     },
     {
-        desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
-        examples: [
-          {
-            code: `const value = useRickRoll()`,
-            value: `${useRickRoll()}`,
-          },
-        ],
-        githubUsername: "MasterIceZ",
+      desc: "usePKazuya - เ ก ลี ย ด ค ว า ม ห วั่ น ไ ห ว",
+      examples: [
+        {
+          code: `const value = usePKazuya("เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ")`,
+          value: usePKazuya(
+            "เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ"
+          ),
+        },
+      ],
+      githubUsername: "Leomotors",
+    },
+    {
+      desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+      examples: [
+        {
+          code: `const value = useRickRoll()`,
+          value: `${useRickRoll()}`,
+        },
+      ],
+      githubUsername: "MasterIceZ",
     },
     {
       desc: "useGoogle - use google please",
       examples: [
         {
           code: `const googling = useGoogle()`,
-          value: <button onClick={() => { useGoogle()("Rickroll") }}>Google this</button>,
+          value: (
+            <button
+              onClick={() => {
+                useGoogle()("Rickroll")
+              }}
+            >
+              Google this
+            </button>
+          ),
         },
       ],
       githubUsername: "ntsd",
+    },
+    {
+      desc: "useYoutube - listen your favorite song on youtube",
+      examples: [
+        {
+          code: `const video = useYoutube("Never gonna give you up")`,
+          value: <button onClick={() => { useYoutube("Never gonna give you up") }}>Search on youtube</button>,
+        },
+      ],
+      githubUsername: "ronnapatp",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
