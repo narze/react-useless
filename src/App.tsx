@@ -20,6 +20,7 @@ import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
 import { useConsoleLog } from "./hooks/useConsoleLog"
+import { useSkoy } from "./hooks/useSkoy"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -214,6 +215,15 @@ function App() {
         },
       ],
       githubUsername: "kratuwu",
+    },
+      desc: "useSkoy - returns SkoyLang for us SkoyPeople",
+      examples: [
+        {
+          code: `const value = useSkoy("รักมิใช่ดวงดาวเมื่อพราวแสง")`,
+          value: `${useSkoy("รักมิใช่ดวงดาวเมื่อพราวแสง")}`,
+        },
+      ],
+      githubUsername: "santhitak",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
