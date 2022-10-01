@@ -26,6 +26,7 @@ import { useSkoy } from "./hooks/useSkoy"
 import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
+import { useAscii } from "./hooks/useAscii"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -299,6 +300,16 @@ function App() {
         },
       ],
       githubUsername: "ntsd",
+    },
+    {
+      desc: "useAscii - useAscii(...)",
+      examples: [
+        {
+          code: "const value = useAscii('hello')",
+          value: useAscii("hello"),
+        },
+      ],
+      githubUsername: "jonasvag",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
