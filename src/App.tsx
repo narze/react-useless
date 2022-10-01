@@ -22,13 +22,23 @@ import { useSalim } from "./hooks/useSalim"
 const UseWeirdComponent = () => {
   return (
     <>
-      <h2>useWeird - Does something weird</h2>
-
       <code>
         const weird = useWeird() &lt;button style=&#123;weird&#125
         &gt;Haha&lt;/button&gt
       </code>
       <button style={useWeird(12)}>Hahaha</button>
+    </>
+  )
+}
+
+const UseSalimComponent = () => {
+  const { quote: salimQuote, refetch: salimRefetch } = useSalim()
+
+  return (
+    <>
+      <code>const {"{ quote, refetch }"} = useSalim()</code>
+      <div>quote is {salimQuote}</div>
+      <button onClick={() => salimRefetch()}>Click to refetch</button>
     </>
   )
 }
@@ -120,7 +130,7 @@ function App() {
       githubUsername: "b5710546232",
     },
     {
-      desc: "useWeird.",
+      desc: "useWeird - Does something weird",
       examples: [UseWeirdComponent()],
       githubUsername: "pontakornth",
     },
@@ -178,10 +188,12 @@ function App() {
       ],
       githubUsername: "annibuliful",
     },
+    {
+      desc: "useSalim - A hook that fetch quote from Salim API",
+      examples: [UseSalimComponent()],
+      githubUsername: "Leomotors",
+    },
   ]
-
-  // change variable name to avoid conflict with other hooks
-  const { quote: salimQuote, refetch: salimRefetch } = useSalim()
 
   return (
     <div className="App">
@@ -198,14 +210,6 @@ function App() {
       {hooks.map((props: CardProps, idx) => {
         return <Card key={idx} {...props} />
       })}
-
-      <div className="card">
-        <h2>useSalim - A hook that fetch quote from Salim API</h2>
-
-        <code>const {"{ quote, refetch }"} = useSalim()</code>
-        <div>quote is {salimQuote}</div>
-        <button onClick={() => salimRefetch()}>Click to refetch</button>
-      </div>
 
       <div className="card">
         <h2>
