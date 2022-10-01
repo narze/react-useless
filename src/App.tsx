@@ -56,7 +56,7 @@ function App() {
 
 
       {hooks.map((hook: HookProp) => {
-        return <
+        return <Card
         desc={hook.desc}
           examples={hook.examples} />
       })}
