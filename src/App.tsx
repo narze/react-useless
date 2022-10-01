@@ -19,7 +19,7 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
-import { useExampleLongState } from "./hooks/useLongerState"
+import { useLongerState } from "./hooks/useLongerState"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -210,8 +210,8 @@ function App() {
       desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
       examples: [
         {
-          code: "const [countLongerState , setCountLongerState] = useLongerState(0)",
-          value: `Current count is ${useExampleLongState()}`
+          code: "const [countLongerState , setCountLongerState] = useLongerState[0]",
+          value: `Current count is ${useLongerState(0)[0]}`
         }
       ],
       githubUsername: "sikkapat79"
