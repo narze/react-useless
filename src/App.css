@@ -38,6 +38,10 @@
   padding: 2em;
   margin: 1em;
   background-color: var(--card-bg-color);
+  max-width: 80vw;
+}
+.card > code {
+  word-break: break-all;
 }
 
 /* TODO: unused code / can be remove */

@@ -1,12 +1,19 @@
-import reactLogo from "./assets/react.svg"
-import "./App.css"
+import reactLogo from './assets/react.svg';
+import './App.css';
+
+import { useLess } from './hooks/useLess';
+import { useVoid } from './hooks/useVoid';
+import { useEven } from './hooks/useEven';
+import { useCuteAndFunny } from './hooks/useCuteAndFunny';
+import { useRandomCodingStamina } from './hooks/useRandomCodingStamina';
+import { useTruthy } from './hooks/useTruthy';
+
+import { useLogException } from "./hooks/useLogException"
 
 import Card, { ExampleProp } from "./components/Card"
-import { useLess } from "./hooks/useLess"
-import { useVoid } from "./hooks/useVoid"
-import { useEven } from "./hooks/useEven"
-import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
 import { useSus } from "./hooks/useSus"
+import { useSmile } from "./hooks/useSmile"
+import { useWeird } from "./hooks/useWeird"
 
 type HookProp = {
   desc: string
@@ -14,7 +21,30 @@ type HookProp = {
 }
 
 function App() {
+  // TODO: move into hooks array if possible
   const useSusValue = useSus("createSus")
+  
+  const useLessValue = useLess(0);
+  const useLessAnotherValue = useLess('ඞ');
+
+  const useEvenValue = useEven(2);
+  const useEvenAnotherValue = useEven(1);
+
+
+  const useCuteAndFunnyValue = useCuteAndFunny(
+    'https://www.pixiv.net/en/artworks/101491852'
+  );
+
+
+  const useLogExceptionValue = useLogException("An error is occurred")
+  
+
+  const useVoidValue = useVoid()
+  const useWeirdValue = useWeird(12)
+  const useSusValue = useSus("createSus")
+
+
+  const useSmileValue = useSmile('hello')
 
   const hooks: HookProp[] = [
     {
@@ -43,23 +73,78 @@ function App() {
   ]
 
   return (
-    <div className="App">
+    <div className='App'>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        <a href='https://vitejs.dev' target='_blank'>
+          <img src='/vite.svg' className='logo' alt='Vite logo' />
         </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href='https://reactjs.org' target='_blank'>
+          <img src={reactLogo} className='logo react' alt='React logo' />
         </a>
       </div>
       <h1>React Useless Hooks</h1>
-
 
       {hooks.map((hook: HookProp) => {
         return <Card
         desc={hook.desc}
           examples={hook.examples} />
       })}
+
+      <div className="card">
+
+        <h2>useWeird - Does something weird</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const weird = useWeird() &lt;button style=&#123;weird&#125
+          &gt;Haha&lt;/button&gt
+        </code>
+        <button style={useWeirdValue}>Hahaha</button>
+      </div>
+
+      <div className="card">
+
+        <h2>useSmile - 😊</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useSmile('hello')
+        </code>
+        <div>value is {useSmileValue}</div>
+      </div>
+
+      {/* ⬆️ UP HERE!! */}
+      {/* <!-- Add your own useless hook example above this comment! --> */}
+
+      <div className='card'>
+        <h2>
+          useRandomCodingStamina - This hook will return beverage to add more
+          stamina while coding.
+        </h2>
+
+        <code style={{ backgroundColor: 'black' }}>
+          const beverage = useRandomCodingStamina();
+        </code>
+        <div>
+          Your stamina's add up is{' '}
+          <span style={{ color: 'whitesmoke' }}>
+            {useRandomCodingStamina()}
+          </span>
+        </div>
+      </div>
+
+      <div className='card'>
+        <h2>useTruthy - This hook will return true to eternity.</h2>
+
+        <code style={{ backgroundColor: 'black' }}>
+          const isAccept = useTruthy();
+        </code>
+        <div>
+          A: Should we hangout to night ?<br />
+          B:&nbsp;
+          <span style={{ color: 'whitesmoke' }}>
+            {useTruthy() ? 'Yes' : 'No'}
+          </span>
+        </div>
+      </div>
 
       <div className="card">
         <h2>useSus - ඞ</h2>
@@ -70,16 +155,26 @@ function App() {
         <div>value is {useSusValue}</div>
       </div>      
 
+
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
+
+      <div className="card">
+        <h2>useException - a useless hook to log message as error.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          useLogException("An error is occured")
+        </code>
+        <div>The error "An error is occured" will be logged in console.</div>
+      </div>
 
       <div className="card">
         <h2>
           Add your own useless hooks and
           <a
-            href="https://github.com/narze/react-useless"
-            target="_blank"
-            style={{ paddingLeft: "0.25em" }}
+            href='https://github.com/narze/react-useless'
+            target='_blank'
+            style={{ paddingLeft: '0.25em' }}
           >
             submit a Pull Request!
           </a>
@@ -88,16 +183,16 @@ function App() {
         <h2>
           Request or find an idea for useless hooks in
           <a
-            href="https://github.com/narze/react-useless/issues"
-            target="_blank"
-            style={{ paddingLeft: "0.25em" }}
+            href='https://github.com/narze/react-useless/issues'
+            target='_blank'
+            style={{ paddingLeft: '0.25em' }}
           >
             Github Issues
           </a>
         </h2>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
