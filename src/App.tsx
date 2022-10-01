@@ -24,6 +24,7 @@ import { useRickRoll } from "./hooks/useRickRoll"
 import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
 import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
+import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
 
 const UseWeirdExampleComponent = () => {
@@ -259,6 +260,18 @@ function App() {
         },
       ],
       githubUsername: "santhitak",
+    },
+    {
+      desc: "usePKazuya - เ ก ลี ย ด ค ว า ม ห วั่ น ไ ห ว",
+      examples: [
+        {
+          code: `const value = usePKazuya("เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ")`,
+          value: usePKazuya(
+            "เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ"
+          ),
+        },
+      ],
+      githubUsername: "Leomotors",
     },
     {
         desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
