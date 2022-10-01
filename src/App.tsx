@@ -19,7 +19,7 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
-import { useLongerState } from "./hooks/useLongerState"
+import { useExampleLongState } from "./hooks/useLongerState"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -46,7 +46,6 @@ const UseSalimExampleComponent = () => {
 }
 
 function App() {
-  const [countLongerState] = useLongerState(0)
 
   const hooks: CardProps[] = [
     {
@@ -211,8 +210,8 @@ function App() {
       desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
       examples: [
         {
-          code: "const [countLongerState , setCountLongerState] = useLongerState[0]",
-          value: `Current count is ${countLongerState}`
+          code: "const [countLongerState , setCountLongerState] = useLongerState(0)",
+          value: `Current count is ${useExampleLongState()}`
         }
       ],
       githubUsername: "sikkapat79"
