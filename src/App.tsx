@@ -218,7 +218,7 @@ function App() {
       ],
       githubUsername: "kratuwu",
     },
-    }
+    {
       desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
       examples: [
         {
