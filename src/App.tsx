@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom"
 import HooksLayout from "./HooksLayout"
-import UseLessDocs from "./hooks/useLess/useLess.docs"
+import { renderHookRoutes } from "./routes"
 
 import reactLogo from "./assets/react.svg"
 import "./App.css"
@@ -47,7 +47,7 @@ function App() {
     <Routes>
       <Route index element={<HomePage />}></Route>
       <Route path="hooks" element={<HooksLayout />}>
-        <Route path="useLess" element={<UseLessDocs />}></Route>
+        {renderHookRoutes}
       </Route>
     </Routes>
   )

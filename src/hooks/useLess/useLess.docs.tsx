@@ -5,7 +5,7 @@ function UseLessDocs() {
   const useLessAnotherValue = useLess("ඞ")
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="docs-wrapper">
       <h1>useLess</h1>
       <div>a useless hook that returns initial value.</div>
       <div className="code-block">

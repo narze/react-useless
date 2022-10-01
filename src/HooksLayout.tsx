@@ -1,5 +1,6 @@
-import { NavLink, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import AppNavLogo from "./components/AppNavLogo"
+import { renderRouteSidebarItems } from "./routes"
 
 function HooksLayout() {
   return (
@@ -38,14 +39,7 @@ function HooksLayout() {
         <label htmlFor="app-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-[#1a1a1a]">
           <AppNavLogo />
-          <li>
-            <NavLink
-              to="useLess"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              useLess
-            </NavLink>
-          </li>
+          {renderRouteSidebarItems}
         </ul>
       </div>
     </div>

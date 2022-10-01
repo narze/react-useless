@@ -80,6 +80,10 @@ button:focus-visible {
   @apply mockup-code bg-[#1a1a1a];
 }
 
+.docs-wrapper {
+  @apply flex flex-col gap-8;
+}
+
 /* Override daisyui */
 .btn {
   font-size: 1rem;
