@@ -12,6 +12,8 @@ import { useLogException } from "./hooks/useLogException"
 
 import Card, { ExampleProp } from "./components/Card"
 import { useSus } from "./hooks/useSus"
+
+import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
 import { useWeird } from "./hooks/useWeird"
 
@@ -35,6 +37,8 @@ function App() {
     'https://www.pixiv.net/en/artworks/101491852'
   );
 
+  
+  const useFullStopValue = useFullStop("Hello World")
 
   const useLogExceptionValue = useLogException("An error is occurred")
   
@@ -144,7 +148,7 @@ function App() {
           </span>
         </div>
       </div>
-
+      
       <div className="card">
         <h2>useSus - ඞ</h2>
 
@@ -152,7 +156,16 @@ function App() {
           const value = useSus("createSus")
         </code>
         <div>value is {useSusValue}</div>
-      </div>      
+      </div>  
+
+      <div className="card">
+        <h2>useFullStop - a useless hook that return string value with (.) full stop.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useFullStop("Hello World")
+        </code>
+        <div>value is {useFullStopValue}</div>
+      </div>
 
 
       {/* ⬆️ UP HERE!! */}
