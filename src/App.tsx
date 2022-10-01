@@ -5,17 +5,41 @@ import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
+import Card, { ExampleProp } from "./components/Card"
+
+type HookProp = {
+  desc: string
+  examples: ExampleProp[]
+}
 
 function App() {
-  const useLessValue = useLess(0)
-  const useLessAnotherValue = useLess("ඞ")
 
-  const useEvenValue = useEven(2)
-  const useEvenAnotherValue = useEven(1)
+  const hooks: HookProp[] = [
+    {
+      desc: "useLess - a useless hook that returns initial value.",
+      examples: [{ code: 'const value = useLess(0)', value: useLess(0) },
+      { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") }]
+    },
+    {
+      desc: "useEven - a useful hook to check number is even or not.",
+      examples: [{ code: 'const value = useEven(2)', value: useEven(2).toString() },
+      { code: 'const anotherValue = useEven(1)', value: useEven(1).toString() }]
+    },
+    {
+      desc: "useVoid - Does nothing, and returns nothing.",
+      examples: [{ code: 'const value = useVoid()', value: "value is nothing" },
+      ]
+    },
+    {
+      desc: "useCuteAndFunny - 😭",
+      examples: [{
+        code: `const value = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')`,
+        value: useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
+      },
+      ]
+    },
+  ]
 
-  const useVoidValue = useVoid()
-
-  const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
 
   return (
     <div className="App">
@@ -29,52 +53,13 @@ function App() {
       </div>
       <h1>React Useless Hooks</h1>
 
-      <div className="card">
-        <h2>useLess - a useless hook that returns initial value.</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useLess(0)
-        </code>
-        <div>value is {useLessValue}</div>
-        <code style={{ backgroundColor: "black" }}>
-          const anotherValue = useLess("ඞ")
-        </code>
-        <div>anotherValue is {useLessAnotherValue}</div>
-      </div>
-
-      <div className="card">
-        <h2>useEven - a useful hook to check number is even or not.</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useEven(2)
-        </code>
-        <div>value is {useEvenValue.toString()}</div>
-        <code style={{ backgroundColor: "black" }}>
-          const anotherValue = useEven(1)
-        </code>
-        <div>anotherValue is {useEvenAnotherValue.toString()}</div>
-      </div>
-
-      <div className="card">
-        <h2>useVoid - Does nothing, and returns nothing.</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useVoid()
-        </code>
-        <div>value is nothing</div>
-      </div>
+      {hooks.map((hook: HookProp) => {
+        return <Card desc={hook.desc}
+          examples={hook.examples} />
+      })}
 
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
-
-      <div className="card">
-        <h2>useCuteAndFunny - 😭</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
-        </code>
-        <div>value is {useCuteAndFunnyValue}</div>
-      </div>
 
       <div className="card">
         <h2>
