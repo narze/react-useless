@@ -1,11 +1,12 @@
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
+import Card, { ExampleProp } from "./components/Card"
 import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
-import Card, { ExampleProp } from "./components/Card"
+import { useSus } from "./hooks/useSus"
 
 type HookProp = {
   desc: string
@@ -13,6 +14,7 @@ type HookProp = {
 }
 
 function App() {
+  const useSusValue = useSus("createSus")
 
   const hooks: HookProp[] = [
     {
@@ -40,7 +42,6 @@ function App() {
     },
   ]
 
-
   return (
     <div className="App">
       <div>
@@ -53,10 +54,21 @@ function App() {
       </div>
       <h1>React Useless Hooks</h1>
 
+
       {hooks.map((hook: HookProp) => {
-        return <Card desc={hook.desc}
+        return <
+        desc={hook.desc}
           examples={hook.examples} />
       })}
+
+      <div className="card">
+        <h2>useSus - ඞ</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useSus("createSus")
+        </code>
+        <div>value is {useSusValue}</div>
+      </div>      
 
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
