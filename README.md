@@ -2,6 +2,10 @@
 
 A collection of [React Custom Hooks](https://reactjs.org/docs/hooks-custom.html) that should not belong anywhere.
 
+## Hacktoberfest
+
+- This repo is created specifically for Hacktoberfest (obviously). If you're interested or want to contribute to my other repos, [let's chat on Discord](https://discord.gg/BWAWegK2pS)! (Most will be in Thai)
+
 ## Contribution
 
 - Create a new hook in `src/hooks` folder.
