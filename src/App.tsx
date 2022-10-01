@@ -23,6 +23,7 @@ import { useConsoleLog } from "./hooks/useConsoleLog"
 import { useRickRoll } from "./hooks/useRickRoll"
 import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
+import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -224,6 +225,16 @@ function App() {
         {
           code: `const value = useConsoleLog("debug")`,
           value: `${useConsoleLog("debug")}`,
+        },
+      ],
+      githubUsername: "kratuwu",
+    },
+    {
+      desc: "useChanochaBrainCells - Returns the number of his brain cells, 84000",
+      examples: [
+        {
+          code: `const value = useChanochaBrainCells()`,
+          value: `${useChanochaBrainCells()}`,
         },
       ],
       githubUsername: "kratuwu",
