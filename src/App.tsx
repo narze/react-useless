@@ -218,7 +218,7 @@ function App() {
         </a>
       </div>
       <h1>React Useless Hooks</h1>
-
+      <h2>({hooks.length} hooks)</h2>
       {hooks.map((props: CardProps, idx) => {
         return <Card key={idx} {...props} />
       })}
