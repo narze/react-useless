@@ -19,6 +19,9 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
+import { useConsoleLog } from "./hooks/useConsoleLog"
+import { useRickRoll } from "./hooks/useRickRoll"
+import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
 import { useGoogle } from "./hooks/useGoogle"
 
@@ -47,19 +50,26 @@ const UseSalimExampleComponent = () => {
 }
 
 function App() {
+
   const hooks: CardProps[] = [
     {
       desc: "useLess - a useless hook that returns initial value.",
       examples: [
         { code: "const value = useLess(0)", value: useLess(0) },
-        { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") },
+        {
+          code: 'const anotherValue = useLess("ඞ")',
+          value: useLess("ඞ"),
+        },
       ],
       githubUsername: "narze",
     },
     {
       desc: "useEven - a useful hook to check number is even or not.",
       examples: [
-        { code: "const value = useEven(2)", value: useEven(2).toString() },
+        {
+          code: "const value = useEven(2)",
+          value: useEven(2).toString(),
+        },
         {
           code: "const anotherValue = useEven(1)",
           value: useEven(1).toString(),
@@ -128,7 +138,10 @@ function App() {
     {
       desc: "useSmile - 😊",
       examples: [
-        { code: "const value = useSmile('hello')", value: useSmile("hello") },
+        {
+          code: "const value = useSmile('hello')",
+          value: useSmile("hello"),
+        },
       ],
       githubUsername: "b5710546232",
     },
@@ -207,6 +220,26 @@ function App() {
       githubUsername: "narze",
     },
     {
+      desc: "useConsoleLog - Simply log the passed value, so you don't have to see ESLint complain about using console.log()",
+      examples: [
+        {
+          code: `const value = useConsoleLog("debug")`,
+          value: `${useConsoleLog("debug")}`,
+        },
+      ],
+      githubUsername: "kratuwu",
+    },
+    {
+      desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
+      examples: [
+        {
+          code: "const [countLongerState , setCountLongerState] = useLongerState[0]",
+          value: `Current count is ${useLongerState(0)[0]}`
+        }
+      ],
+      githubUsername: "sikkapat79",
+    },
+    {
       desc: "useSkoy - returns SkoyLang for us SkoyPeople",
       examples: [
         {
@@ -215,6 +248,16 @@ function App() {
         },
       ],
       githubUsername: "santhitak",
+    },
+    {
+        desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+        examples: [
+          {
+            code: `const value = useRickRoll()`,
+            value: `${useRickRoll()}`,
+          },
+        ],
+        githubUsername: "MasterIceZ",
     },
     {
       desc: "useGoogle - use google please",
