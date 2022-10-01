@@ -19,6 +19,7 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
+import { useConsoleLog } from "./hooks/useConsoleLog"
 import { useRickRoll } from "./hooks/useRickRoll"
 import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
@@ -218,6 +219,16 @@ function App() {
       githubUsername: "narze",
     },
     {
+      desc: "useConsoleLog - Simply log the passed value, so you don't have to see ESLint complain about using console.log()",
+      examples: [
+        {
+          code: `const value = useConsoleLog("debug")`,
+          value: `${useConsoleLog("debug")}`,
+        },
+      ],
+      githubUsername: "kratuwu",
+    },
+    {
       desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
       examples: [
         {
@@ -225,7 +236,7 @@ function App() {
           value: `Current count is ${useLongerState(0)[0]}`
         }
       ],
-      githubUsername: "sikkapat79"
+      githubUsername: "sikkapat79",
     },
     {
       desc: "useSkoy - returns SkoyLang for us SkoyPeople",
