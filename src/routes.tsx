@@ -7,16 +7,23 @@ const hookRoutes: { [key: string]: JSX.Element } = {
   useLess: <UseLessDocs />,
 }
 
-export const renderHookRoutes = Object.keys(hookRoutes).map((hookName) => (
-  <Route key={hookName} path={hookName} element={hookRoutes[hookName]}></Route>
-))
+export const renderHookRoutes = Object.keys(hookRoutes).map(
+  (hookName, index) => (
+    <Route
+      key={hookName}
+      index={index === 0}
+      path={index > 0 ? hookName : undefined}
+      element={hookRoutes[hookName]}
+    ></Route>
+  )
+)
 
 export const renderRouteSidebarItems = Object.keys(hookRoutes).map(
-  (hookName) => (
+  (hookName, index) => (
     <li>
       <NavLink
         key={hookName}
-        to={hookName}
+        to={index === 0 ? "/" : hookName}
         className={({ isActive }) => (isActive ? "active" : undefined)}
       >
         {hookName}
