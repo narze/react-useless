@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src/hooks",
+    "outDir": "./package",
+    "noEmit": false,
+    "declaration": true
+  },
+  "include": ["./src/hooks/**/*"]
+}

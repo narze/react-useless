@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* define color */
+:root {
+  --color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+  --a-color: #646cff;
+  --a-color--hover: #535bf2;
+  --code-color: #000;
+  --card-bg-color: #1e1e1e;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #213547;
+    --bg-color: #fff;
+    --a-color: #646cff;
+    --a-color--hover: #747bff;
+    --code-color: #fff;
+    --card-bg-color: #f1f1f1;
+  }
+}
+
+/* css */
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -9,7 +31,9 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  /* color: rgba(255, 255, 255, 0.87); */
+  color: var(--color);
+  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,11 +48,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--a-color);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--a-color--hover);
 }
 
 body {
@@ -44,6 +68,11 @@ h1 {
   line-height: 1.1;
 }
 
+code {
+  background: var(--code-color);
+}
+
+/* TODO: unused code / can be remove */
 button {
   border-radius: 8px;
   border: 1px solid transparent;

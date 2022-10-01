@@ -14,6 +14,8 @@
   height: 11em;
   padding: 1.5em;
   will-change: filter;
+  -webkit-transition: -webkit-filter 500ms linear;
+  transition: filter 500ms linear;
 }
 .logo--small {
   @apply p-0 h-8;
@@ -43,9 +45,20 @@
 .card {
   padding: 2em;
   margin: 1em;
-  background-color: #1e1e1e;
+  background-color: var(--card-bg-color);
+  max-width: 80vw;
+}
+.card > code {
+  word-break: break-all;
 }
 
+/* TODO: unused code / can be remove */
 .read-the-docs {
   color: #888;
+}
+
+@media (prefers-color-scheme: light) {
+  .read-the-docs {
+    color: #0f0f0f;
+  }
 }
