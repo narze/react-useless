@@ -27,6 +27,7 @@ import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
 import { useYoutube } from "./hooks/useYoutube"
+import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
 
 const UseWeirdExampleComponent = () => {
@@ -317,10 +318,28 @@ function App() {
       examples: [
         {
           code: `const video = useYoutube("Never gonna give you up")`,
-          value: <button onClick={() => { useYoutube("Never gonna give you up") }}>Search on youtube</button>,
+          value: (
+            <button
+              onClick={() => {
+                useYoutube("Never gonna give you up")
+              }}
+            >
+              Search on youtube
+            </button>
+          ),
         },
       ],
       githubUsername: "ronnapatp",
+    },
+    {
+      desc: "useUndefined - a useless hook that returns undefined.",
+      examples: [
+        {
+          code: `const value = useUndefined()`,
+          value: `${useUndefined()}`,
+        },
+      ],
+      githubUsername: "armsasmart",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
