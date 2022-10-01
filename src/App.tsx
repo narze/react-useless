@@ -14,6 +14,7 @@ import { useLogException } from "./hooks/useLogException"
 import Card, { ExampleProp } from "./components/Card"
 
 import { useSus } from "./hooks/useSus"
+import { useEmpty } from "./hooks/useEmpty"
 
 import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
@@ -76,6 +77,8 @@ function App() {
       ]
     },
   ]
+
+  const useEmptyValue = useEmpty()
 
   return (
     <div className='App'>
@@ -178,6 +181,15 @@ function App() {
         <div>value is {useFullStopValue}</div>
       </div>
 
+
+      <div className="card">
+        <h2>useEmpty - a useless hook that returns empty string.</h2>
+
+        <code>
+          const value = useEmpty()
+        </code>
+        <div>value is {useEmptyValue}</div>
+      </div>      
 
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
