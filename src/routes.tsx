@@ -21,7 +21,7 @@ export const renderRouteSidebarItems = (
       <NavLink
         to="/hooks"
         end
-        className={({ isActive }) => (isActive ? "active" : undefined)}
+        className={({ isActive }) => `hover:text-white ${isActive && "active"}`}
       >
         All hooks
       </NavLink>
@@ -30,7 +30,9 @@ export const renderRouteSidebarItems = (
       <li key={hookName}>
         <NavLink
           to={hookName}
-          className={({ isActive }) => (isActive ? "active" : undefined)}
+          className={({ isActive }) =>
+            `hover:text-white ${isActive && "active"}`
+          }
         >
           {hookName}
         </NavLink>

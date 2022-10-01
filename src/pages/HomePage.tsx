@@ -23,13 +23,13 @@ function HomePage() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-        <Link to="/hooks" className="btn btn-primary w-40">
+        <Link to="/hooks" className="btn btn-primary w-40 hover:text-white">
           Get Started
         </Link>
         <a
           href="https://github.com/narze/react-useless"
           target="_blank"
-          className="btn w-40"
+          className="btn w-40 hover:text-white"
         >
           View on Github
         </a>
