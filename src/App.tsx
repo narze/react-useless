@@ -349,7 +349,7 @@ function App() {
           code: `const message = useDontKnow()`,
           value: `Do you know about flooding situation ? ${useDontKnow()}`
         }
-      ]
+      ],
       githubUsername: "sikkapat79",
     }
   ] // Add your own hooks usage above this comment (at the end of the list)
