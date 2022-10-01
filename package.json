@@ -1,12 +1,12 @@
 {
-  "name": "react-useless",
-  "private": true,
+  "name": "react-useless-hooks",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "package": "tsc -p tsconfig.package.json && cp package.json package"
   },
   "dependencies": {
     "react": "^18.2.0",
