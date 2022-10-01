@@ -31,6 +31,7 @@ import { useGoogle } from "./hooks/useGoogle"
 import { useYoutube } from "./hooks/useYoutube"
 import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
+import { useDontKnow } from "./hooks/useDontKnow"
 import { useFreeze } from "./hooks/useFreeze"
 
 const UseWeirdExampleComponent = () => {
@@ -373,6 +374,16 @@ function App() {
       githubUsername: "armsasmart",
     },
     {
+      desc: 'useDontKnow - We don\'t know anything in this universe !!',
+      examples: [
+        {
+          code: `const message = useDontKnow()`,
+          value: `Do you know about flooding situation ? ${useDontKnow()}`
+        }
+      ],
+      githubUsername: "sikkapat79",
+    },
+    {
       desc: "useFreeze - just in case you need your react app to freeze",
       examples: [
         {
@@ -380,7 +391,7 @@ function App() {
           value: <button onClick={() => { useFreeze(() => "Sike") }}>I kid you not</button>
         }
       ],
-      githubUsername: "pknn"
+      githubUsername: "pknn",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
