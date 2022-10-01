@@ -1,8 +1,10 @@
+import { FallbackProps, withErrorBoundary } from "react-error-boundary";
+
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
 import Card, { CardProps } from "./components/Card"
-
+import { useException } from './hooks/useException';
 import { useLess } from "./hooks/useLess"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
@@ -30,6 +32,7 @@ import { useYoutube } from "./hooks/useYoutube"
 import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
 import { useDontKnow } from "./hooks/useDontKnow"
+import { useFreeze } from "./hooks/useFreeze"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -42,6 +45,25 @@ const UseWeirdExampleComponent = () => {
     </>
   )
 }
+
+const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
+  return (
+    <div>
+      <p>thrown error:</p>
+      <pre>{error?.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+}
+
+
+const UseExceptionExampleComponent = withErrorBoundary(() => {
+  const throwException = useException();
+  throwException('Bad Request', (new Date()).toString());
+  return <></>;
+}, { FallbackComponent: ErrorFallback });
+
+
 
 const UseSalimExampleComponent = () => {
   const { quote: salimQuote, refetch: salimRefetch } = useSalim()
@@ -110,7 +132,7 @@ function App() {
       githubUsername: "richeyphu",
     },
     {
-      desc: "useException - a useless hook to log message as error.",
+      desc: "useLogException - a useless hook to log message as error.",
       examples: [
         {
           code: `useLogException("An error is occured")`,
@@ -331,6 +353,15 @@ function App() {
         },
       ],
       githubUsername: "ronnapatp",
+    }, {
+      desc: "useException - throw an exception with arguments",
+      examples: [
+        {
+          code: `const throwException = useException()`,
+          value: <UseExceptionExampleComponent/>,
+        },
+      ],
+      githubUsername: "tomerk97",
     },
     {
       desc: "useUndefined - a useless hook that returns undefined.",
@@ -351,7 +382,17 @@ function App() {
         }
       ],
       githubUsername: "sikkapat79",
-    }
+    },
+    {
+      desc: "useFreeze - just in case you need your react app to freeze",
+      examples: [
+        {
+          code: `useFreeze(() => console.log('Hello Antarctica'))`,
+          value: <button onClick={() => { useFreeze(() => "Sike") }}>I kid you not</button>
+        }
+      ],
+      githubUsername: "pknn",
+    },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
 
