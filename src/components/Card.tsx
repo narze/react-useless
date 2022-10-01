@@ -2,11 +2,13 @@ type ExampleProp = {
   code: string
   value: any
 }
-type Props = {
+export type CardProps = {
   desc: string
   examples: ExampleProp[]
+  githubUsername?: string
 }
-const Card = ({ desc, examples }: Props) => {
+
+const Card = ({ desc, examples, githubUsername }: CardProps) => {
   return (
     <div className="card">
       <h2>{desc}</h2>
@@ -18,6 +20,14 @@ const Card = ({ desc, examples }: Props) => {
           </div>
         )
       })}
+      {githubUsername ? (
+        <div>
+          Contributed by{" "}
+          <a href={`https://github.com/${githubUsername}`} target="_blank">
+            @{githubUsername}
+          </a>
+        </div>
+      ) : null}
     </div>
   )
 }

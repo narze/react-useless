@@ -10,7 +10,7 @@ import { useApple } from "./hooks/useApple"
 
 import { useLogException } from "./hooks/useLogException"
 
-import Card, { ExampleProp } from "./components/Card"
+import Card, { CardProps } from "./components/Card"
 
 import { useSus } from "./hooks/useSus"
 import { useEmpty } from "./hooks/useEmpty"
@@ -22,19 +22,15 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 
-type HookProp = {
-  desc: string
-  examples: ExampleProp[]
-}
-
 function App() {
-  const hooks: HookProp[] = [
+  const hooks: CardProps[] = [
     {
       desc: "useLess - a useless hook that returns initial value.",
       examples: [
         { code: "const value = useLess(0)", value: useLess(0) },
         { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") },
       ],
+      githubUsername: "narze",
     },
     {
       desc: "useEven - a useful hook to check number is even or not.",
@@ -170,8 +166,8 @@ function App() {
       </div>
       <h1>React Useless Hooks</h1>
 
-      {hooks.map((hook: HookProp, idx) => {
-        return <Card key={idx} desc={hook.desc} examples={hook.examples} />
+      {hooks.map((props: CardProps, idx) => {
+        return <Card key={idx} {...props} />
       })}
 
       <div className="card">
