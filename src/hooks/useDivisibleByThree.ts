@@ -4,7 +4,7 @@ const sumOfDigits = (num: Number) => num.toString().split('').reduce((a, b) => a
 
 export function useDivisibleByThree(inputValue: number) {
     // Add the digits untill the sum is single digit and the number is divisible by 3 if the sum is 0 or 3 or 6 or 9
-    const isEven = useMemo(() => {
+    const isDivisibleByThree = useMemo(() => {
         if (Number.isInteger(inputValue)) {
             let sum = inputValue;
             while (sum > 9) {
@@ -15,5 +15,5 @@ export function useDivisibleByThree(inputValue: number) {
         return false;
     }, [])
 
-    return isEven
+    return isDivisibleByThree
 }
