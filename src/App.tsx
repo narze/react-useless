@@ -52,7 +52,6 @@ const UseSalimExampleComponent = () => {
 }
 
 function App() {
-
   const hooks: CardProps[] = [
     {
       desc: "useLess - a useless hook that returns initial value.",
@@ -246,8 +245,8 @@ function App() {
       examples: [
         {
           code: "const [countLongerState , setCountLongerState] = useLongerState[0]",
-          value: `Current count is ${useLongerState(0)[0]}`
-        }
+          value: `Current count is ${useLongerState(0)[0]}`,
+        },
       ],
       githubUsername: "sikkapat79",
     },
@@ -274,21 +273,29 @@ function App() {
       githubUsername: "Leomotors",
     },
     {
-        desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
-        examples: [
-          {
-            code: `const value = useRickRoll()`,
-            value: `${useRickRoll()}`,
-          },
-        ],
-        githubUsername: "MasterIceZ",
+      desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+      examples: [
+        {
+          code: `const value = useRickRoll()`,
+          value: `${useRickRoll()}`,
+        },
+      ],
+      githubUsername: "MasterIceZ",
     },
     {
       desc: "useGoogle - use google please",
       examples: [
         {
           code: `const googling = useGoogle()`,
-          value: <button onClick={() => { useGoogle()("Rickroll") }}>Google this</button>,
+          value: (
+            <button
+              onClick={() => {
+                useGoogle()("Rickroll")
+              }}
+            >
+              Google this
+            </button>
+          ),
         },
       ],
       githubUsername: "ntsd",
