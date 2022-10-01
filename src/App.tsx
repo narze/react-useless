@@ -20,7 +20,8 @@ import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
 import { useWeird } from "./hooks/useWeird"
 import { useRandom } from "./hooks/useRandom"
-import {useDivisibleByThree} from './hooks/useDivisibleByThree'
+import { useDivisibleByThree } from './hooks/useDivisibleByThree'
+import { useSalim } from "./hooks/useSalim"
 
 type HookProp = {
   desc: string
@@ -82,6 +83,9 @@ function App() {
   const useEmptyValue = useEmpty()
 
   const randomValue = useRandom()
+
+  // change variable name to avoid conflict with other hooks
+  const { quote: salimQuote, refetch: salimRefetch } = useSalim()
 
   return (
     <div className="App">
@@ -187,12 +191,20 @@ function App() {
         <code>const value = useEmpty()</code>
         <div>value is {useEmptyValue}</div>
       </div>
-
+      
       <div className="card">
         <h2>useRandom - a useless hook that returns random number.</h2>
 
         <code>const value = useRandom()</code>
         <div>value is {randomValue}</div>
+      </div>
+
+      <div className="card">
+        <h2>useSalim - A hook that fetch quote from Salim API</h2>
+
+        <code>const {"{ quote, refetch }"} = useSalim()</code>
+        <div>quote is {salimQuote}</div>
+        <button onClick={() => salimRefetch()}>Click to refetch</button>
       </div>
 
       {/* ⬆️ UP HERE!! */}
