@@ -7,10 +7,12 @@ import { useEven } from './hooks/useEven';
 import { useCuteAndFunny } from './hooks/useCuteAndFunny';
 import { useRandomCodingStamina } from './hooks/useRandomCodingStamina';
 import { useTruthy } from './hooks/useTruthy';
+import { useApple } from "./hooks/useApple"
 
 import { useLogException } from "./hooks/useLogException"
 
 import Card, { ExampleProp } from "./components/Card"
+
 import { useSus } from "./hooks/useSus"
 
 import { useFullStop } from "./hooks/useFullStop"
@@ -147,6 +149,15 @@ function App() {
             {useTruthy() ? 'Yes' : 'No'}
           </span>
         </div>
+      </div>
+      
+      <div className="card">
+        <h2>useApple - Does nothing, and returns random apple.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useApple()
+        </code>
+        <div>value is either 🍎 or 🍏</div>
       </div>
       
       <div className="card">
