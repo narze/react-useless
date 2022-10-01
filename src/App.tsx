@@ -20,6 +20,7 @@ import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
 import { useSkoy } from "./hooks/useSkoy"
+import { useMap } from "./hooks/useMap"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -214,6 +215,16 @@ function App() {
         },
       ],
       githubUsername: "santhitak",
+    },
+    {
+      desc: "useMap - just array.map but hook",
+      examples: [
+        {
+          code: `const [isEven1, isEven2] = useMap(useEven, 1, 2)`,
+          value: useMap(useEven, 1, 2).toString(),
+        },
+      ],
+      githubUsername: "ntsd",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
