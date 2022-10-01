@@ -6,6 +6,7 @@ import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
 import { useSus } from "./hooks/useSus"
+import { useEmpty } from "./hooks/useEmpty"
 
 function App() {
   const useLessValue = useLess(0)
@@ -19,6 +20,8 @@ function App() {
   const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
 
   const useSusValue = useSus("createSus")
+
+  const useEmptyValue = useEmpty()
 
   return (
     <div className="App">
@@ -74,6 +77,15 @@ function App() {
           const value = useSus("createSus")
         </code>
         <div>value is {useSusValue}</div>
+      </div>      
+
+      <div className="card">
+        <h2>useEmpty - a useless hook that returns empty string.</h2>
+
+        <code>
+          const value = useEmpty()
+        </code>
+        <div>value is {useEmptyValue}</div>
       </div>      
 
       {/* ⬆️ UP HERE!! */}
