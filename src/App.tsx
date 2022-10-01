@@ -5,6 +5,7 @@ import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
+import { useFullStop } from "./hooks/useFullStop"
 
 function App() {
   const useLessValue = useLess(0)
@@ -16,6 +17,8 @@ function App() {
   const useVoidValue = useVoid()
 
   const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
+
+  const useFullStopValue = useFullStop("Hello World")
 
   return (
     <div className="App">
@@ -62,6 +65,15 @@ function App() {
           const value = useVoid()
         </code>
         <div>value is nothing</div>
+      </div>
+
+      <div className="card">
+        <h2>useFullStop - a useless hook that return string value with (.) full stop.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useFullStop("Hello World")
+        </code>
+        <div>value is {useFullStopValue}</div>
       </div>
 
       {/* ⬆️ UP HERE!! */}
