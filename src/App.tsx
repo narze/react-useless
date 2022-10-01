@@ -26,6 +26,8 @@ import { useSkoy } from "./hooks/useSkoy"
 import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
+import { useYoutube } from "./hooks/useYoutube"
+import { useAscii } from "./hooks/useAscii"
 import { useFreeze } from "./hooks/useFreeze"
 
 const UseWeirdExampleComponent = () => {
@@ -302,13 +304,34 @@ function App() {
       githubUsername: "ntsd",
     },
     {
+      desc: "useAscii - useAscii(...)",
+      examples: [
+        {
+          code: "const value = useAscii('hello')",
+          value: useAscii("hello"),
+        },
+      ],
+      githubUsername: "jonasvag",
+    },
+    {
+      desc: "useYoutube - listen your favorite song on youtube",
+      examples: [
+        {
+          code: `const video = useYoutube("Never gonna give you up")`,
+          value: <button onClick={() => { useYoutube("Never gonna give you up") }}>Search on youtube</button>,
+        },
+      ],
+      githubUsername: "ronnapatp",
+    },
+    {
       desc: "useFreeze - just in case you need your react app to freeze",
       examples: [
         {
           code: `useFreeze(() => console.log('Hello Antarctica'))`,
           value: `I don't even know`
         }
-      ]
+      ],
+      githubUsername: "pknn"
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
