@@ -5,7 +5,11 @@ import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
+
+import { useLogException } from "./hooks/useLogException"
+
 import { useSus } from "./hooks/useSus"
+
 
 function App() {
   const useLessValue = useLess(0)
@@ -18,7 +22,12 @@ function App() {
 
   const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
 
+
+  const useLogExceptionValue = useLogException("An error is occurred")
+  
+
   const useSusValue = useSus("createSus")
+
 
   return (
     <div className="App">
@@ -89,6 +98,15 @@ function App() {
       </div>
 
       <div className="card">
+        <h2>useException - a useless hook to log message as error.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          useLogException("An error is occured")
+        </code>
+        <div>The error "An error is occured" will be logged in console.</div>
+      </div>
+
+      <div className="card">
         <h2>
           Add your own useless hooks and
           <a
@@ -112,7 +130,7 @@ function App() {
         </h2>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
