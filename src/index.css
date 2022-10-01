@@ -113,6 +113,10 @@ button:focus-visible {
   @apply flex flex-col gap-8;
 }
 
+.docs-wrapper h1 {
+  @apply text-3xl lg:text-6xl overflow-x-auto;
+}
+
 /* Override daisyui */
 .btn {
   font-size: 1rem;
