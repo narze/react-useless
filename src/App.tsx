@@ -23,6 +23,7 @@ import { useConsoleLog } from "./hooks/useConsoleLog"
 import { useRickRoll } from "./hooks/useRickRoll"
 import { useLongerState } from "./hooks/useLongerState"
 import { useSkoy } from "./hooks/useSkoy"
+import { useGoogle } from "./hooks/useGoogle"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -248,16 +249,26 @@ function App() {
       ],
       githubUsername: "santhitak",
     },
-	{
-      desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+    {
+        desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+        examples: [
+          {
+            code: `const value = useRickRoll()`,
+            value: `${useRickRoll()}`,
+          },
+        ],
+        githubUsername: "MasterIceZ",
+    },
+    {
+      desc: "useGoogle - use google please",
       examples: [
         {
-          code: `const value = useRickRoll()`,
-          value: `${useRickRoll()}`,
+          code: `const googling = useGoogle()`,
+          value: <button onClick={() => { useGoogle()("Rickroll") }}>Google this</button>,
         },
       ],
-      githubUsername: "MasterIceZ",
-	}
+      githubUsername: "ntsd",
+    },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
 
