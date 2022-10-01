@@ -2,7 +2,6 @@ import reactLogo from "./assets/react.svg"
 import "./App.css"
 
 import { useLess } from "./hooks/useLess"
-import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
 import { useRandomCodingStamina } from "./hooks/useRandomCodingStamina"
@@ -20,7 +19,7 @@ import { useFullStop } from "./hooks/useFullStop"
 import { useSmile } from "./hooks/useSmile"
 import { useWeird } from "./hooks/useWeird"
 import { useRandom } from "./hooks/useRandom"
-import { useDivisibleByThree } from './hooks/useDivisibleByThree'
+import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 
 type HookProp = {
@@ -29,12 +28,6 @@ type HookProp = {
 }
 
 function App() {
-  // TODO: move into hooks array if possible
-  const useSusValue = useSus("createSus")
-  const useFullStopValue = useFullStop("Hello World")
-  const useWeirdValue = useWeird(12)
-  const useSmileValue = useSmile("hello")
-
   const hooks: HookProp[] = [
     {
       desc: "useLess - a useless hook that returns initial value.",
@@ -71,18 +64,96 @@ function App() {
     {
       desc: "useDivisibleByThree - an overengineered hook to check if a number is Divisible by Three or not.",
       examples: [
-        { code: "const value = useDivisibleByThree(200)", value: useDivisibleByThree(200).toString() },
+        {
+          code: "const value = useDivisibleByThree(200)",
+          value: useDivisibleByThree(200).toString(),
+        },
         {
           code: "const anotherValue = useDivisibleByThree(1233)",
           value: useDivisibleByThree(1233).toString(),
         },
       ],
     },
+    {
+      desc: "useSmile - 😊",
+      examples: [
+        { code: "const value = useSmile('hello')", value: useSmile("hello") },
+      ],
+    },
+    {
+      desc: "useRandomCodingStamina - This hook will return beverage to add more stamina while coding.",
+      examples: [
+        {
+          code: "const beverage = useRandomCodingStamina()",
+          value: `Your stamina's add up is ${useRandomCodingStamina()}`,
+        },
+      ],
+    },
+    {
+      desc: "useTruthy - This hook will return true to eternity.",
+      examples: [
+        {
+          code: "const isAccept = useTruthy()",
+          value: `A: Should we hangout to night ?\n
+          B: \n ${useTruthy() ? "Yes" : "No"}`,
+        },
+      ],
+    },
+    {
+      desc: "useApple - Does nothing, and returns random apple.",
+      examples: [
+        {
+          code: "const value = useApple()",
+          value: `value is either 🍎 or 🍏 : ${useApple()}`,
+        },
+      ],
+    },
+    {
+      desc: "useSus - ඞ",
+      examples: [
+        {
+          code: `const value = useSus("createSus")`,
+          value: useSus(),
+        },
+      ],
+    },
+    {
+      desc: "useFullStop - a useless hook that return string value with (.) full stop.",
+      examples: [
+        {
+          code: `const value = useFullStop("Hello World")`,
+          value: useFullStop("Hello World"),
+        },
+      ],
+    },
+    {
+      desc: "useEmpty - a useless hook that returns empty string.",
+      examples: [
+        {
+          code: `const value = useEmpty()`,
+          value: useEmpty(),
+        },
+      ],
+    },
+    {
+      desc: "useRandom -  a useless hook that returns random number.",
+      examples: [
+        {
+          code: `const value = useRandom()`,
+          value: useRandom(),
+        },
+      ],
+    },
+    {
+      desc: "useException - a useless hook to log message as error.",
+      examples: [
+        {
+          code: `useLogException("An error is occured")`,
+          value: useLogException("An error is occured"),
+        },
+      ],
+    },
   ]
-
-  const useEmptyValue = useEmpty()
-
-  const randomValue = useRandom()
 
   // change variable name to avoid conflict with other hooks
   const { quote: salimQuote, refetch: salimRefetch } = useSalim()
@@ -99,8 +170,8 @@ function App() {
       </div>
       <h1>React Useless Hooks</h1>
 
-      {hooks.map((hook: HookProp) => {
-        return <Card desc={hook.desc} examples={hook.examples} />
+      {hooks.map((hook: HookProp, idx) => {
+        return <Card key={idx} desc={hook.desc} examples={hook.examples} />
       })}
 
       <div className="card">
@@ -110,93 +181,7 @@ function App() {
           const weird = useWeird() &lt;button style=&#123;weird&#125
           &gt;Haha&lt;/button&gt
         </code>
-        <button style={useWeirdValue}>Hahaha</button>
-      </div>
-
-      <div className="card">
-        <h2>useSmile - 😊</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useSmile('hello')
-        </code>
-        <div>value is {useSmileValue}</div>
-      </div>
-
-      {/* ⬆️ UP HERE!! */}
-      {/* <!-- Add your own useless hook example above this comment! --> */}
-
-      <div className="card">
-        <h2>
-          useRandomCodingStamina - This hook will return beverage to add more
-          stamina while coding.
-        </h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const beverage = useRandomCodingStamina();
-        </code>
-        <div>
-          Your stamina's add up is{" "}
-          <span style={{ color: "whitesmoke" }}>
-            {useRandomCodingStamina()}
-          </span>
-        </div>
-      </div>
-
-      <div className="card">
-        <h2>useTruthy - This hook will return true to eternity.</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const isAccept = useTruthy();
-        </code>
-        <div>
-          A: Should we hangout to night ?<br />
-          B:&nbsp;
-          <span style={{ color: "whitesmoke" }}>
-            {useTruthy() ? "Yes" : "No"}
-          </span>
-        </div>
-      </div>
-
-      <div className="card">
-        <h2>useApple - Does nothing, and returns random apple.</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useApple()
-        </code>
-        <div>value is either 🍎 or 🍏</div>
-      </div>
-
-      <div className="card">
-        <h2>useSus - ඞ</h2>
-
-        <code>const value = useSus("createSus")</code>
-        <div>value is {useSusValue}</div>
-      </div>
-
-      <div className="card">
-        <h2>
-          useFullStop - a useless hook that return string value with (.) full
-          stop.
-        </h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          const value = useFullStop("Hello World")
-        </code>
-        <div>value is {useFullStopValue}</div>
-      </div>
-
-      <div className="card">
-        <h2>useEmpty - a useless hook that returns empty string.</h2>
-
-        <code>const value = useEmpty()</code>
-        <div>value is {useEmptyValue}</div>
-      </div>
-      
-      <div className="card">
-        <h2>useRandom - a useless hook that returns random number.</h2>
-
-        <code>const value = useRandom()</code>
-        <div>value is {randomValue}</div>
+        <button style={useWeird(12)}>Hahaha</button>
       </div>
 
       <div className="card">
@@ -205,18 +190,6 @@ function App() {
         <code>const {"{ quote, refetch }"} = useSalim()</code>
         <div>quote is {salimQuote}</div>
         <button onClick={() => salimRefetch()}>Click to refetch</button>
-      </div>
-
-      {/* ⬆️ UP HERE!! */}
-      {/* <!-- Add your own useless hook example above this comment! --> */}
-
-      <div className="card">
-        <h2>useException - a useless hook to log message as error.</h2>
-
-        <code style={{ backgroundColor: "black" }}>
-          useLogException("An error is occured")
-        </code>
-        <div>The error "An error is occured" will be logged in console.</div>
       </div>
 
       <div className="card">
