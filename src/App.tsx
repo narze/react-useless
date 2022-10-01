@@ -1,6 +1,7 @@
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
+import { useApple } from "./hooks/useApple"
 import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
@@ -62,6 +63,15 @@ function App() {
           const value = useVoid()
         </code>
         <div>value is nothing</div>
+      </div>
+
+      <div className="card">
+        <h2>useApple - Does nothing, and returns random apple.</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useApple()
+        </code>
+        <div>value is either 🍎 or 🍏</div>
       </div>
 
       {/* ⬆️ UP HERE!! */}
