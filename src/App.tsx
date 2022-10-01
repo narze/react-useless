@@ -19,11 +19,8 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
-<<<<<<< HEAD
 import { useRickRoll } from "./hooks/useRickRoll"
-=======
 import { useSkoy } from "./hooks/useSkoy"
->>>>>>> 5cc995f5a4f074c0e1cca02fee47a4877eab3ac7
 
 const UseWeirdExampleComponent = () => {
   return (
