@@ -27,6 +27,7 @@ import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
 import { useYoutube } from "./hooks/useYoutube"
+import { useAscii } from "./hooks/useAscii"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -300,6 +301,16 @@ function App() {
         },
       ],
       githubUsername: "ntsd",
+    },
+    {
+      desc: "useAscii - useAscii(...)",
+      examples: [
+        {
+          code: "const value = useAscii('hello')",
+          value: useAscii("hello"),
+        },
+      ],
+      githubUsername: "jonasvag",
     },
     {
       desc: "useYoutube - listen your favorite song on youtube",
