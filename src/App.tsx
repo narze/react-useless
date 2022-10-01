@@ -1,3 +1,5 @@
+import { FallbackProps, withErrorBoundary } from "react-error-boundary";
+
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
@@ -29,7 +31,7 @@ import { useGoogle } from "./hooks/useGoogle"
 import { useYoutube } from "./hooks/useYoutube"
 import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
-import { FallbackProps, withErrorBoundary } from "react-error-boundary";
+import { useFreeze } from "./hooks/useFreeze"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -369,6 +371,16 @@ function App() {
         },
       ],
       githubUsername: "armsasmart",
+    },
+    {
+      desc: "useFreeze - just in case you need your react app to freeze",
+      examples: [
+        {
+          code: `useFreeze(() => console.log('Hello Antarctica'))`,
+          value: <button onClick={() => { useFreeze(() => "Sike") }}>I kid you not</button>
+        }
+      ],
+      githubUsername: "pknn"
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
