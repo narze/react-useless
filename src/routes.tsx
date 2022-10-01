@@ -17,9 +17,8 @@ export const renderHookRoutes = Object.keys(hookRoutes).map((hookName) => (
 
 export const renderRouteSidebarItems = Object.keys(hookRoutes).map(
   (hookName) => (
-    <li>
+    <li key={hookName}>
       <NavLink
-        key={hookName}
         to={hookName}
         className={({ isActive }) => (isActive ? "active" : undefined)}
       >
