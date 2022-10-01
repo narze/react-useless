@@ -19,7 +19,11 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
+<<<<<<< HEAD
 import { useRickRoll } from "./hooks/useRickRoll"
+=======
+import { useSkoy } from "./hooks/useSkoy"
+>>>>>>> 5cc995f5a4f074c0e1cca02fee47a4877eab3ac7
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -215,6 +219,16 @@ function App() {
       githubUsername: "narze",
     },
     {
+      desc: "useSkoy - returns SkoyLang for us SkoyPeople",
+      examples: [
+        {
+          code: `const value = useSkoy("รักมิใช่ดวงดาวเมื่อพราวแสง")`,
+          value: `${useSkoy("รักมิใช่ดวงดาวเมื่อพราวแสง")}`,
+        },
+      ],
+      githubUsername: "santhitak",
+    },
+	{
       desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
       examples: [
         {
@@ -223,7 +237,7 @@ function App() {
         },
       ],
       githubUsername: "MasterIceZ",
-    },
+	}
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
 
