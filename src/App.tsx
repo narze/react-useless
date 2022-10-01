@@ -28,24 +28,8 @@ type HookProp = {
 function App() {
   // TODO: move into hooks array if possible
   const useSusValue = useSus("createSus")
-
-  const useLessValue = useLess(0)
-  const useLessAnotherValue = useLess("ඞ")
-
-  const useEvenValue = useEven(2)
-  const useEvenAnotherValue = useEven(1)
-
-  const useCuteAndFunnyValue = useCuteAndFunny(
-    "https://www.pixiv.net/en/artworks/101491852"
-  )
-
   const useFullStopValue = useFullStop("Hello World")
-
-  const useLogExceptionValue = useLogException("An error is occurred")
-
-  const useVoidValue = useVoid()
   const useWeirdValue = useWeird(12)
-
   const useSmileValue = useSmile("hello")
 
   const hooks: HookProp[] = [
