@@ -19,6 +19,7 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
+import { useRickRoll } from "./hooks/useRickRoll"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -50,14 +51,20 @@ function App() {
       desc: "useLess - a useless hook that returns initial value.",
       examples: [
         { code: "const value = useLess(0)", value: useLess(0) },
-        { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") },
+        {
+          code: 'const anotherValue = useLess("ඞ")',
+          value: useLess("ඞ"),
+        },
       ],
       githubUsername: "narze",
     },
     {
       desc: "useEven - a useful hook to check number is even or not.",
       examples: [
-        { code: "const value = useEven(2)", value: useEven(2).toString() },
+        {
+          code: "const value = useEven(2)",
+          value: useEven(2).toString(),
+        },
         {
           code: "const anotherValue = useEven(1)",
           value: useEven(1).toString(),
@@ -126,7 +133,10 @@ function App() {
     {
       desc: "useSmile - 😊",
       examples: [
-        { code: "const value = useSmile('hello')", value: useSmile("hello") },
+        {
+          code: "const value = useSmile('hello')",
+          value: useSmile("hello"),
+        },
       ],
       githubUsername: "b5710546232",
     },
@@ -203,6 +213,16 @@ function App() {
         },
       ],
       githubUsername: "narze",
+    },
+    {
+      desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+      examples: [
+        {
+          code: `const value = useRickRoll()`,
+          value: `${useRickRoll()}`,
+        },
+      ],
+      githubUsername: "MasterIceZ",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
