@@ -12,6 +12,7 @@ import { useLogException } from "./hooks/useLogException"
 
 import { useSus } from "./hooks/useSus"
 
+import { useSmile } from "./hooks/useSmile"
 
 function App() {
   const useLessValue = useLess(0);
@@ -32,6 +33,8 @@ function App() {
 
   const useSusValue = useSus("createSus")
 
+
+  const useSmileValue = useSmile('hello')
 
   return (
     <div className='App'>
@@ -76,6 +79,18 @@ function App() {
         </code>
         <div>value is nothing</div>
       </div>
+
+      <div className="card">
+        <h2>useSmile - 😊</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const value = useSmile('hello')
+        </code>
+        <div>value is {useSmileValue}</div>
+      </div>
+
+      {/* ⬆️ UP HERE!! */}
+      {/* <!-- Add your own useless hook example above this comment! --> */}
 
       <div className='card'>
         <h2>
