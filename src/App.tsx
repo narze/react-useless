@@ -1,7 +1,11 @@
+import { Routes, Route, Link } from "react-router-dom"
+import HooksLayout from "./HooksLayout"
+import UseLessDocs from "./hooks/useLess/useLess.docs"
+
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
-function App() {
+function HomePage() {
   return (
     <div className="App app-container">
       <div className="flex justify-center gap-8">
@@ -23,7 +27,9 @@ function App() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-        <button className="btn btn-primary w-40">Get Started</button>
+        <Link to="/hooks" className="btn btn-primary w-40">
+          Get Started
+        </Link>
         <a
           href="https://github.com/narze/react-useless"
           target="_blank"
@@ -33,6 +39,17 @@ function App() {
         </a>
       </div>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route index element={<HomePage />}></Route>
+      <Route path="hooks" element={<HooksLayout />}>
+        <Route path="useLess" element={<UseLessDocs />}></Route>
+      </Route>
+    </Routes>
   )
 }
 
