@@ -13,6 +13,8 @@ import { useLogException } from "./hooks/useLogException"
 import { useSus } from "./hooks/useSus"
 
 import { useSmile } from "./hooks/useSmile"
+import { useWeird } from "./hooks/useWeird"
+
 
 function App() {
   const useLessValue = useLess(0);
@@ -21,7 +23,6 @@ function App() {
   const useEvenValue = useEven(2);
   const useEvenAnotherValue = useEven(1);
 
-  const useVoidValue = useVoid();
 
   const useCuteAndFunnyValue = useCuteAndFunny(
     'https://www.pixiv.net/en/artworks/101491852'
@@ -31,6 +32,8 @@ function App() {
   const useLogExceptionValue = useLogException("An error is occurred")
   
 
+  const useVoidValue = useVoid()
+  const useWeirdValue = useWeird(12)
   const useSusValue = useSus("createSus")
 
 
@@ -81,6 +84,18 @@ function App() {
       </div>
 
       <div className="card">
+
+        <h2>useWeird - Does something weird</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const weird = useWeird() &lt;button style=&#123;weird&#125
+          &gt;Haha&lt;/button&gt
+        </code>
+        <button style={useWeirdValue}>Hahaha</button>
+      </div>
+
+      <div className="card">
+
         <h2>useSmile - 😊</h2>
 
         <code style={{ backgroundColor: "black" }}>
