@@ -166,7 +166,7 @@ function App() {
       <div className="card">
         <h2>useSus - ඞ</h2>
 
-        <code style={{ backgroundColor: "black" }}>
+        <code>
           const value = useSus("createSus")
         </code>
         <div>value is {useSusValue}</div>
