@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import { useMemo } from "react"
 export const useTruthy = () => {
-  const truthy = useMemo(() => true, []);
+  const truthy = useMemo(() => true, [])
 
-  return truthy;
-};
+  return truthy
+}

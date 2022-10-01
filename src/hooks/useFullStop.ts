@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo } from "react"
 
 export function useFullStop(inputValue: string) {
   const result = useMemo(() => `${inputValue}.`, [])

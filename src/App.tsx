@@ -1,12 +1,12 @@
-import reactLogo from './assets/react.svg';
-import './App.css';
+import reactLogo from "./assets/react.svg"
+import "./App.css"
 
-import { useLess } from './hooks/useLess';
-import { useVoid } from './hooks/useVoid';
-import { useEven } from './hooks/useEven';
-import { useCuteAndFunny } from './hooks/useCuteAndFunny';
-import { useRandomCodingStamina } from './hooks/useRandomCodingStamina';
-import { useTruthy } from './hooks/useTruthy';
+import { useLess } from "./hooks/useLess"
+import { useVoid } from "./hooks/useVoid"
+import { useEven } from "./hooks/useEven"
+import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
+import { useRandomCodingStamina } from "./hooks/useRandomCodingStamina"
+import { useTruthy } from "./hooks/useTruthy"
 import { useApple } from "./hooks/useApple"
 
 import { useLogException } from "./hooks/useLogException"
@@ -28,78 +28,80 @@ type HookProp = {
 function App() {
   // TODO: move into hooks array if possible
   const useSusValue = useSus("createSus")
-  
-  const useLessValue = useLess(0);
-  const useLessAnotherValue = useLess('ඞ');
 
-  const useEvenValue = useEven(2);
-  const useEvenAnotherValue = useEven(1);
+  const useLessValue = useLess(0)
+  const useLessAnotherValue = useLess("ඞ")
 
+  const useEvenValue = useEven(2)
+  const useEvenAnotherValue = useEven(1)
 
   const useCuteAndFunnyValue = useCuteAndFunny(
-    'https://www.pixiv.net/en/artworks/101491852'
-  );
+    "https://www.pixiv.net/en/artworks/101491852"
+  )
 
-  
   const useFullStopValue = useFullStop("Hello World")
 
   const useLogExceptionValue = useLogException("An error is occurred")
-  
 
   const useVoidValue = useVoid()
   const useWeirdValue = useWeird(12)
 
-
-  const useSmileValue = useSmile('hello')
+  const useSmileValue = useSmile("hello")
 
   const hooks: HookProp[] = [
     {
       desc: "useLess - a useless hook that returns initial value.",
-      examples: [{ code: 'const value = useLess(0)', value: useLess(0) },
-      { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") }]
+      examples: [
+        { code: "const value = useLess(0)", value: useLess(0) },
+        { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") },
+      ],
     },
     {
       desc: "useEven - a useful hook to check number is even or not.",
-      examples: [{ code: 'const value = useEven(2)', value: useEven(2).toString() },
-      { code: 'const anotherValue = useEven(1)', value: useEven(1).toString() }]
+      examples: [
+        { code: "const value = useEven(2)", value: useEven(2).toString() },
+        {
+          code: "const anotherValue = useEven(1)",
+          value: useEven(1).toString(),
+        },
+      ],
     },
     {
       desc: "useVoid - Does nothing, and returns nothing.",
-      examples: [{ code: 'const value = useVoid()', value: "value is nothing" },
-      ]
+      examples: [
+        { code: "const value = useVoid()", value: "value is nothing" },
+      ],
     },
     {
       desc: "useCuteAndFunny - 😭",
-      examples: [{
-        code: `const value = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')`,
-        value: useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
-      },
-      ]
+      examples: [
+        {
+          code: `const value = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')`,
+          value: useCuteAndFunny("https://www.pixiv.net/en/artworks/101491852"),
+        },
+      ],
     },
   ]
 
   const useEmptyValue = useEmpty()
 
   return (
-    <div className='App'>
+    <div className="App">
       <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src='/vite.svg' className='logo' alt='Vite logo' />
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
-        <a href='https://reactjs.org' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>React Useless Hooks</h1>
 
       {hooks.map((hook: HookProp) => {
-        return <Card
-        desc={hook.desc}
-          examples={hook.examples} />
+        return <Card desc={hook.desc} examples={hook.examples} />
       })}
 
       <div className="card">
-
         <h2>useWeird - Does something weird</h2>
 
         <code style={{ backgroundColor: "black" }}>
@@ -110,7 +112,6 @@ function App() {
       </div>
 
       <div className="card">
-
         <h2>useSmile - 😊</h2>
 
         <code style={{ backgroundColor: "black" }}>
@@ -122,38 +123,38 @@ function App() {
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
 
-      <div className='card'>
+      <div className="card">
         <h2>
           useRandomCodingStamina - This hook will return beverage to add more
           stamina while coding.
         </h2>
 
-        <code style={{ backgroundColor: 'black' }}>
+        <code style={{ backgroundColor: "black" }}>
           const beverage = useRandomCodingStamina();
         </code>
         <div>
-          Your stamina's add up is{' '}
-          <span style={{ color: 'whitesmoke' }}>
+          Your stamina's add up is{" "}
+          <span style={{ color: "whitesmoke" }}>
             {useRandomCodingStamina()}
           </span>
         </div>
       </div>
 
-      <div className='card'>
+      <div className="card">
         <h2>useTruthy - This hook will return true to eternity.</h2>
 
-        <code style={{ backgroundColor: 'black' }}>
+        <code style={{ backgroundColor: "black" }}>
           const isAccept = useTruthy();
         </code>
         <div>
           A: Should we hangout to night ?<br />
           B:&nbsp;
-          <span style={{ color: 'whitesmoke' }}>
-            {useTruthy() ? 'Yes' : 'No'}
+          <span style={{ color: "whitesmoke" }}>
+            {useTruthy() ? "Yes" : "No"}
           </span>
         </div>
       </div>
-      
+
       <div className="card">
         <h2>useApple - Does nothing, and returns random apple.</h2>
 
@@ -162,18 +163,19 @@ function App() {
         </code>
         <div>value is either 🍎 or 🍏</div>
       </div>
-      
+
       <div className="card">
         <h2>useSus - ඞ</h2>
 
-        <code>
-          const value = useSus("createSus")
-        </code>
+        <code>const value = useSus("createSus")</code>
         <div>value is {useSusValue}</div>
-      </div>  
+      </div>
 
       <div className="card">
-        <h2>useFullStop - a useless hook that return string value with (.) full stop.</h2>
+        <h2>
+          useFullStop - a useless hook that return string value with (.) full
+          stop.
+        </h2>
 
         <code style={{ backgroundColor: "black" }}>
           const value = useFullStop("Hello World")
@@ -181,15 +183,12 @@ function App() {
         <div>value is {useFullStopValue}</div>
       </div>
 
-
       <div className="card">
         <h2>useEmpty - a useless hook that returns empty string.</h2>
 
-        <code>
-          const value = useEmpty()
-        </code>
+        <code>const value = useEmpty()</code>
         <div>value is {useEmptyValue}</div>
-      </div>      
+      </div>
 
       {/* ⬆️ UP HERE!! */}
       {/* <!-- Add your own useless hook example above this comment! --> */}
@@ -207,9 +206,9 @@ function App() {
         <h2>
           Add your own useless hooks and
           <a
-            href='https://github.com/narze/react-useless'
-            target='_blank'
-            style={{ paddingLeft: '0.25em' }}
+            href="https://github.com/narze/react-useless"
+            target="_blank"
+            style={{ paddingLeft: "0.25em" }}
           >
             submit a Pull Request!
           </a>
@@ -218,16 +217,16 @@ function App() {
         <h2>
           Request or find an idea for useless hooks in
           <a
-            href='https://github.com/narze/react-useless/issues'
-            target='_blank'
-            style={{ paddingLeft: '0.25em' }}
+            href="https://github.com/narze/react-useless/issues"
+            target="_blank"
+            style={{ paddingLeft: "0.25em" }}
           >
             Github Issues
           </a>
         </h2>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
