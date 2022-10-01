@@ -19,6 +19,16 @@ import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
 import { useAny } from "./hooks/useAny"
+import { useConsoleLog } from "./hooks/useConsoleLog"
+import { useRickRoll } from "./hooks/useRickRoll"
+import { useLongerState } from "./hooks/useLongerState"
+import { useSkoy } from "./hooks/useSkoy"
+import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
+import { usePKazuya } from "./hooks/usePKazuya"
+import { useGoogle } from "./hooks/useGoogle"
+import { useYoutube } from "./hooks/useYoutube"
+import { useUndefined } from "./hooks/useUndefined"
+import { useAscii } from "./hooks/useAscii"
 import { useDontKnow } from "./hooks/useDontKnow"
 
 const UseWeirdExampleComponent = () => {
@@ -51,14 +61,20 @@ function App() {
       desc: "useLess - a useless hook that returns initial value.",
       examples: [
         { code: "const value = useLess(0)", value: useLess(0) },
-        { code: 'const anotherValue = useLess("ඞ")', value: useLess("ඞ") },
+        {
+          code: 'const anotherValue = useLess("ඞ")',
+          value: useLess("ඞ"),
+        },
       ],
       githubUsername: "narze",
     },
     {
       desc: "useEven - a useful hook to check number is even or not.",
       examples: [
-        { code: "const value = useEven(2)", value: useEven(2).toString() },
+        {
+          code: "const value = useEven(2)",
+          value: useEven(2).toString(),
+        },
         {
           code: "const anotherValue = useEven(1)",
           value: useEven(1).toString(),
@@ -127,7 +143,10 @@ function App() {
     {
       desc: "useSmile - 😊",
       examples: [
-        { code: "const value = useSmile('hello')", value: useSmile("hello") },
+        {
+          code: "const value = useSmile('hello')",
+          value: useSmile("hello"),
+        },
       ],
       githubUsername: "b5710546232",
     },
@@ -206,6 +225,124 @@ function App() {
       githubUsername: "narze",
     },
     {
+      desc: "useConsoleLog - Simply log the passed value, so you don't have to see ESLint complain about using console.log()",
+      examples: [
+        {
+          code: `const value = useConsoleLog("debug")`,
+          value: `${useConsoleLog("debug")}`,
+        },
+      ],
+      githubUsername: "kratuwu",
+    },
+    {
+      desc: "useChanochaBrainCells - Returns the number of his brain cells, 84000",
+      examples: [
+        {
+          code: `const value = useChanochaBrainCells()`,
+          value: `${useChanochaBrainCells()}`,
+        },
+      ],
+      githubUsername: "kratuwu",
+    },
+    {
+      desc: "useLongerState - it will return such a longer hook than original useState. Hahaha",
+      examples: [
+        {
+          code: "const [countLongerState , setCountLongerState] = useLongerState[0]",
+          value: `Current count is ${useLongerState(0)[0]}`,
+        },
+      ],
+      githubUsername: "sikkapat79",
+    },
+    {
+      desc: "useSkoy - returns SkoyLang for us SkoyPeople",
+      examples: [
+        {
+          code: `const value = useSkoy("รักมิใช่ดวงดาวเมื่อพราวแสง")`,
+          value: `${useSkoy("รักมิใช่ดวงดาวเมื่อพราวแสง")}`,
+        },
+      ],
+      githubUsername: "santhitak",
+    },
+    {
+      desc: "usePKazuya - เ ก ลี ย ด ค ว า ม ห วั่ น ไ ห ว",
+      examples: [
+        {
+          code: `const value = usePKazuya("เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ")`,
+          value: usePKazuya(
+            "เกลียดความหวั่นไหวที่ก่อตัวในใจฉัน ให้ห้ามเท่าไหร่ใจยิ่งดึงดันให้คิดถึงเธอ"
+          ),
+        },
+      ],
+      githubUsername: "Leomotors",
+    },
+    {
+      desc: "useRickRoll - returns Nerver Gonna Give You Up song url",
+      examples: [
+        {
+          code: `const value = useRickRoll()`,
+          value: `${useRickRoll()}`,
+        },
+      ],
+      githubUsername: "MasterIceZ",
+    },
+    {
+      desc: "useGoogle - use google please",
+      examples: [
+        {
+          code: `const googling = useGoogle()`,
+          value: (
+            <button
+              onClick={() => {
+                useGoogle()("Rickroll")
+              }}
+            >
+              Google this
+            </button>
+          ),
+        },
+      ],
+      githubUsername: "ntsd",
+    },
+    {
+      desc: "useAscii - useAscii(...)",
+      examples: [
+        {
+          code: "const value = useAscii('hello')",
+          value: useAscii("hello"),
+        },
+      ],
+      githubUsername: "jonasvag",
+    },
+    {
+      desc: "useYoutube - listen your favorite song on youtube",
+      examples: [
+        {
+          code: `const video = useYoutube("Never gonna give you up")`,
+          value: (
+            <button
+              onClick={() => {
+                useYoutube("Never gonna give you up")
+              }}
+            >
+              Search on youtube
+            </button>
+          ),
+        },
+      ],
+      githubUsername: "ronnapatp",
+    },
+    {
+      desc: "useUndefined - a useless hook that returns undefined.",
+      examples: [
+        {
+          code: `const value = useUndefined()`,
+          value: `${useUndefined()}`,
+        },
+      ],
+      githubUsername: "armsasmart",
+    },
+    {
       desc: 'useDontKnow - We don\'t know anything in this universe !!',
       examples: [
         {
@@ -213,6 +350,7 @@ function App() {
           value: `Do you know about flooding situation ? ${useDontKnow()}`
         }
       ]
+      githubUsername: "sikkapat79",
     }
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
@@ -228,7 +366,7 @@ function App() {
         </a>
       </div>
       <h1>React Useless Hooks</h1>
-
+      <h2>({hooks.length} hooks)</h2>
       {hooks.map((props: CardProps, idx) => {
         return <Card key={idx} {...props} />
       })}
