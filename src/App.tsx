@@ -41,7 +41,6 @@ function App() {
 
   const useVoidValue = useVoid()
   const useWeirdValue = useWeird(12)
-  const useSusValue = useSus("createSus")
 
 
   const useSmileValue = useSmile('hello')
