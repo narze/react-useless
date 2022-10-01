@@ -26,6 +26,7 @@ import { useSkoy } from "./hooks/useSkoy"
 import { useChanochaBrainCells } from "./hooks/useChanochaBrainCells"
 import { usePKazuya } from "./hooks/usePKazuya"
 import { useGoogle } from "./hooks/useGoogle"
+import { useFreeze } from "./hooks/useFreeze"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -299,6 +300,15 @@ function App() {
         },
       ],
       githubUsername: "ntsd",
+    },
+    {
+      desc: "useFreeze - just in case you need your react app to freeze",
+      examples: [
+        {
+          code: `useFreeze(() => console.log('Hello Antarctica'))`,
+          value: `I don't even know`
+        }
+      ]
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
