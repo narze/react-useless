@@ -17,9 +17,7 @@ function App() {
   const useVoidValue = useVoid()
   const useWeirdValue = useWeird(12)
 
-  const useCuteAndFunnyValue = useCuteAndFunny(
-    "https://www.pixiv.net/en/artworks/101491852"
-  )
+  const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
 
   return (
     <div className="App">
