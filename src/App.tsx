@@ -5,6 +5,7 @@ import { useLess } from "./hooks/useLess"
 import { useVoid } from "./hooks/useVoid"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
+import { useWeird } from "./hooks/useWeird"
 
 function App() {
   const useLessValue = useLess(0)
@@ -14,8 +15,11 @@ function App() {
   const useEvenAnotherValue = useEven(1)
 
   const useVoidValue = useVoid()
+  const useWeirdValue = useWeird(12)
 
-  const useCuteAndFunnyValue = useCuteAndFunny('https://www.pixiv.net/en/artworks/101491852')
+  const useCuteAndFunnyValue = useCuteAndFunny(
+    "https://www.pixiv.net/en/artworks/101491852"
+  )
 
   return (
     <div className="App">
@@ -62,6 +66,16 @@ function App() {
           const value = useVoid()
         </code>
         <div>value is nothing</div>
+      </div>
+
+      <div className="card">
+        <h2>useWeird - Does something weird</h2>
+
+        <code style={{ backgroundColor: "black" }}>
+          const weird = useWeird() &lt;button style=&#123;weird&#125
+          &gt;Haha&lt;/button&gt
+        </code>
+        <button style={useWeirdValue}>Hahaha</button>
       </div>
 
       {/* ⬆️ UP HERE!! */}
