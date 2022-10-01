@@ -18,6 +18,7 @@ import { useWeird } from "./hooks/useWeird"
 import { useRandom } from "./hooks/useRandom"
 import { useDivisibleByThree } from "./hooks/useDivisibleByThree"
 import { useSalim } from "./hooks/useSalim"
+import { useAny } from "./hooks/useAny"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -192,6 +193,16 @@ function App() {
       desc: "useSalim - A hook that fetch quote from Salim API",
       examples: [UseSalimExampleComponent()],
       githubUsername: "Leomotors",
+    },
+    {
+      desc: "useAny - returns same value with DefinitelyNotAny type",
+      examples: [
+        {
+          code: `const value = useAny(123)`,
+          value: `${useAny(123)} (type will be "any")`,
+        },
+      ],
+      githubUsername: "narze",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
