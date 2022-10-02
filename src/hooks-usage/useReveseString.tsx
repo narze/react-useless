@@ -3,7 +3,7 @@ import { useReveseString } from "../hooks/useReveseString"
 
 export default function () {
   const cardProps = {
-    desc: "useReveseString - a useReveseString hook that returns initial value.",
+    desc: "useReveseString - a useReveseString hook that returns revese value.",
     examples: [
       {
         code: 'const value = useReveseString("yellow")',
