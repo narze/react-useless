@@ -440,8 +440,7 @@ function App() {
       ],
       githubUsername: "ntsd",
     },
-  ] // Add your own hooks usage above this comment (at the end of the list)
-  // Create a new component if your hook needs more customization
+  ] // DON'T ADD ANY CODE HERE. ALL THESE HOOKS WILL BE MIGRATED TO src/hooks-usage SOON
 
   const hooksUsageComponents = Object.entries(allHooksUsage).map(
     ([_path, module]) => {
