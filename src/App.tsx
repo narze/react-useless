@@ -31,6 +31,7 @@ import { useGoogle } from "./hooks/useGoogle"
 import { useYoutube } from "./hooks/useYoutube"
 import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
+import { useCoinTossRickRoll } from "./hooks/useCointossRickRoll"
 import { useDontKnow } from "./hooks/useDontKnow"
 import { useFreeze } from "./hooks/useFreeze"
 import { useThanos } from "./hooks/useThanos"
@@ -393,6 +394,16 @@ function App() {
         }
       ],
       githubUsername: "pknn",
+    },
+    {
+      desc: "useCoinTossRickRoll - returns a string, 50/50 chance of returning Never gonna give you up youtube url",
+      examples: [
+        {
+          value: <a href={useCoinTossRickRoll()}>Click me</a>,
+          code: "const url = useCoinTossRickRoll()",
+        },
+      ],
+      githubUsername: "DrowningToast",
     },
     {
       desc: "useThanos - remove half of elements by the query selector",
