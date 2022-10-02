@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react"
-import { DefinitelyNotAny } from "./types"
+import { DefinitelyNotAny } from "../types"
 
 export function useVoid(...args: DefinitelyNotAny[]) {
   useLayoutEffect(() => {
