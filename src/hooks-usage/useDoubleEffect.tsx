@@ -1,17 +1,18 @@
-
+import Card from "../components/Card"
 import { useDoubleEffect } from "../hooks/useDoubleEffect"
-
 
 export default function () {
   const cardProps = {
     desc: "useDoubleEffect - double your effect",
     examples: [
-      { code: `useDoubleEffect(() => {
+      {
+        code: `useDoubleEffect(() => {
                 console.log("Hi React");
-              }, []);`, 
-        value: useDoubleEffect() 
+              }, []);`,
+        value: useDoubleEffect(() => {
+          "Hi react"
+        }, []),
       },
- 
     ],
     githubUsername: "minnyww",
   }
