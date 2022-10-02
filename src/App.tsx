@@ -7,7 +7,10 @@ import "./App.css"
 import Card, { CardProps } from "./components/Card"
 
 // Load all components from src/hooks-usage
-const allHooksUsage = import.meta.glob("./hooks-usage/*.tsx", { eager: true })
+const allHooksUsage = import.meta.glob(
+  ["./hooks-usage/*.tsx", "!./hooks-usage/_TEMPLATE.tsx"],
+  { eager: true }
+)
 
 import { useException } from "./hooks/useException"
 import { useLess } from "./hooks/useLess"
