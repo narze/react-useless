@@ -1,10 +1,15 @@
-import { FallbackProps, withErrorBoundary } from "react-error-boundary";
+import { Fragment } from "react"
+import { FallbackProps, withErrorBoundary } from "react-error-boundary"
 
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 
 import Card, { CardProps } from "./components/Card"
-import { useException } from './hooks/useException';
+
+// Load all components from src/hooks-usage
+const allHooksUsage = import.meta.glob("./hooks-usage/*.tsx", { eager: true })
+
+import { useException } from "./hooks/useException"
 import { useLess } from "./hooks/useLess"
 import { useEven } from "./hooks/useEven"
 import { useCuteAndFunny } from "./hooks/useCuteAndFunny"
@@ -58,14 +63,14 @@ const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   )
 }
 
-
-const UseExceptionExampleComponent = withErrorBoundary(() => {
-  const throwException = useException();
-  throwException('Bad Request', (new Date()).toString());
-  return <></>;
-}, { FallbackComponent: ErrorFallback });
-
-
+const UseExceptionExampleComponent = withErrorBoundary(
+  () => {
+    const throwException = useException()
+    throwException("Bad Request", new Date().toString())
+    return <></>
+  },
+  { FallbackComponent: ErrorFallback }
+)
 
 const UseSalimExampleComponent = () => {
   const { quote: salimQuote, refetch: salimRefetch } = useSalim()
@@ -81,17 +86,17 @@ const UseSalimExampleComponent = () => {
 
 function App() {
   const hooks: CardProps[] = [
-    {
-      desc: "useLess - a useless hook that returns initial value.",
-      examples: [
-        { code: "const value = useLess(0)", value: useLess(0) },
-        {
-          code: 'const anotherValue = useLess("ඞ")',
-          value: useLess("ඞ"),
-        },
-      ],
-      githubUsername: "narze",
-    },
+    // {
+    //   desc: "useLess - a useless hook that returns initial value.",
+    //   examples: [
+    //     { code: "const value = useLess(0)", value: useLess(0) },
+    //     {
+    //       code: 'const anotherValue = useLess("ඞ")',
+    //       value: useLess("ඞ"),
+    //     },
+    //   ],
+    //   githubUsername: "narze",
+    // },
     {
       desc: "useEven - a useful hook to check number is even or not.",
       examples: [
@@ -355,12 +360,13 @@ function App() {
         },
       ],
       githubUsername: "ronnapatp",
-    }, {
+    },
+    {
       desc: "useException - throw an exception with arguments",
       examples: [
         {
           code: `const throwException = useException()`,
-          value: <UseExceptionExampleComponent/>,
+          value: <UseExceptionExampleComponent />,
         },
       ],
       githubUsername: "tomerk97",
@@ -376,12 +382,12 @@ function App() {
       githubUsername: "armsasmart",
     },
     {
-      desc: 'useDontKnow - We don\'t know anything in this universe !!',
+      desc: "useDontKnow - We don't know anything in this universe !!",
       examples: [
         {
           code: `const message = useDontKnow()`,
-          value: `Do you know about flooding situation ? ${useDontKnow()}`
-        }
+          value: `Do you know about flooding situation ? ${useDontKnow()}`,
+        },
       ],
       githubUsername: "sikkapat79",
     },
@@ -390,8 +396,16 @@ function App() {
       examples: [
         {
           code: `useFreeze(() => console.log('Hello Antarctica'))`,
-          value: <button onClick={() => { useFreeze(() => "Sike") }}>I kid you not</button>
-        }
+          value: (
+            <button
+              onClick={() => {
+                useFreeze(() => "Sike")
+              }}
+            >
+              I kid you not
+            </button>
+          ),
+        },
       ],
       githubUsername: "pknn",
     },
@@ -426,6 +440,13 @@ function App() {
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
 
+  const hooksUsageComponents = Object.entries(allHooksUsage).map(
+    ([_path, module]) => {
+      const component = (module as any).default
+      return component as () => JSX.Element
+    }
+  )
+
   return (
     <div className="App">
       <div>
@@ -436,8 +457,16 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
       <h1>React Useless Hooks</h1>
       <h2>({hooks.length} hooks)</h2>
+
+      {/* New hooks usage components automatically loaded from src/hooks-usage */}
+      {hooksUsageComponents.map((element, idx) => {
+        return <Fragment key={idx}>{element()}</Fragment>
+      })}
+
+      {/* Legacy hooks from "hooks" array */}
       {hooks.map((props: CardProps, idx) => {
         return <Card key={idx} {...props} />
       })}
