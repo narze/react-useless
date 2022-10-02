@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "package": "tsc -p tsconfig.package.json && cp package.json package"
+    "package": "tsc -p tsconfig.package.json && cp package.json package",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
