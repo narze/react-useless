@@ -18,12 +18,16 @@ const Card = ({ desc, examples, githubUsername }: CardProps) => {
         if ("code" in example) {
           return (
             <div key={idx}>
-              <code style={{ backgroundColor: "black" }}>{example.code}</code>
+              <code>{example.code}</code>
               <div>value is {example.value}</div>
             </div>
           )
         } else {
-          return <>{example}</>
+          return (
+            <div key={idx}>
+              <>{example}</>
+            </div>
+          )
         }
       })}
       {githubUsername ? (
