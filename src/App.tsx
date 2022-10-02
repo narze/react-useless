@@ -33,6 +33,7 @@ import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
 import { useDontKnow } from "./hooks/useDontKnow"
 import { useFreeze } from "./hooks/useFreeze"
+import { useTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything } from "./hooks/useTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything";
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -392,6 +393,16 @@ function App() {
         }
       ],
       githubUsername: "pknn",
+    },
+    {
+      desc: "useTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything - returns the answer to the ultimate question of life, the universe, and everything",
+      examples: [
+        {
+          code: `const value = useTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything()`,
+          value: `${useTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything()}`,
+        }
+      ],
+      githubUsername: "aphrodicez",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
