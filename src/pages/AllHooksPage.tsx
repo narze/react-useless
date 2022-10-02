@@ -35,7 +35,7 @@ import { useYoutube } from "../hooks/useYoutube"
 
 // Load all components from src/hooks-usage
 const allHooksUsage = import.meta.glob(
-  ["./hooks-usage/*.tsx", "!./hooks-usage/_TEMPLATE.tsx"],
+  ["../hooks-usage/*.tsx", "!../hooks-usage/_TEMPLATE.tsx"],
   { eager: true }
 )
 
