@@ -5,13 +5,7 @@ export const UseYouSpinMyXRightRound = () => {
   const [ref, spinMyXRightRound] = useYouSpinMyXRightRound(10)
 
   return (
-    <button
-      ref={ref}
-      onClick={() => {
-        console.log("clicked")
-        spinMyXRightRound()
-      }}
-    >
+    <button ref={ref} onClick={() => spinMyXRightRound()}>
       Spin 🥩🌀
     </button>
   )
