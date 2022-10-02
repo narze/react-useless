@@ -7,7 +7,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "package": "tsc -p tsconfig.package.json && cp package.json package",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "create:hook": "hygen hook new"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,6 +28,7 @@
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
     "husky": "^8.0.1",
+    "hygen": "^6.2.11",
     "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
     "skoy": "^0.3.2",
