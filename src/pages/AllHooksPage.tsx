@@ -1,17 +1,22 @@
+import { Fragment } from "react"
+import { FallbackProps, withErrorBoundary } from "react-error-boundary"
 import reactLogo from "../assets/react.svg"
 import Card, { CardProps } from "../components/Card"
 import { useAny } from "../hooks/useAny"
 import { useApple } from "../hooks/useApple"
 import { useAscii } from "../hooks/useAscii"
 import { useChanochaBrainCells } from "../hooks/useChanochaBrainCells"
+import { useCoinTossRickRoll } from "../hooks/useCointossRickRoll"
 import { useConsoleLog } from "../hooks/useConsoleLog"
 import { useCuteAndFunny } from "../hooks/useCuteAndFunny/useCuteAndFunny"
 import { useDivisibleByThree } from "../hooks/useDivisibleByThree"
+import { useDontKnow } from "../hooks/useDontKnow"
 import { useEmpty } from "../hooks/useEmpty"
 import { useEven } from "../hooks/useEven/useEven"
+import { useException } from "../hooks/useException"
+import { useFreeze } from "../hooks/useFreeze"
 import { useFullStop } from "../hooks/useFullStop"
 import { useGoogle } from "../hooks/useGoogle"
-import { useLess } from "../hooks/useLess/useLess"
 import { useLogException } from "../hooks/useLogException"
 import { useLongerState } from "../hooks/useLongerState"
 import { usePKazuya } from "../hooks/usePKazuya"
@@ -22,10 +27,17 @@ import { useSalim } from "../hooks/useSalim"
 import { useSkoy } from "../hooks/useSkoy"
 import { useSmile } from "../hooks/useSmile"
 import { useSus } from "../hooks/useSus"
+import { useThanos } from "../hooks/useThanos"
 import { useTruthy } from "../hooks/useTruthy"
 import { useUndefined } from "../hooks/useUndefined"
 import { useWeird } from "../hooks/useWeird"
 import { useYoutube } from "../hooks/useYoutube"
+
+// Load all components from src/hooks-usage
+const allHooksUsage = import.meta.glob(
+  ["./hooks-usage/*.tsx", "!./hooks-usage/_TEMPLATE.tsx"],
+  { eager: true }
+)
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -39,6 +51,25 @@ const UseWeirdExampleComponent = () => {
   )
 }
 
+const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
+  return (
+    <div>
+      <p>thrown error:</p>
+      <pre>{error?.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+}
+
+const UseExceptionExampleComponent = withErrorBoundary(
+  () => {
+    const throwException = useException()
+    throwException("Bad Request", new Date().toString())
+    return <></>
+  },
+  { FallbackComponent: ErrorFallback }
+)
+
 const UseSalimExampleComponent = () => {
   const { quote: salimQuote, refetch: salimRefetch } = useSalim()
 
@@ -51,19 +82,19 @@ const UseSalimExampleComponent = () => {
   )
 }
 
-function AllHooksPage() {
+function App() {
   const hooks: CardProps[] = [
-    {
-      desc: "useLess - a useless hook that returns initial value.",
-      examples: [
-        { code: "const value = useLess(0)", value: useLess(0) },
-        {
-          code: 'const anotherValue = useLess("ඞ")',
-          value: useLess("ඞ"),
-        },
-      ],
-      githubUsername: "narze",
-    },
+    // {
+    //   desc: "useLess - a useless hook that returns initial value.",
+    //   examples: [
+    //     { code: "const value = useLess(0)", value: useLess(0) },
+    //     {
+    //       code: 'const anotherValue = useLess("ඞ")',
+    //       value: useLess("ඞ"),
+    //     },
+    //   ],
+    //   githubUsername: "narze",
+    // },
     {
       desc: "useEven - a useful hook to check number is even or not.",
       examples: [
@@ -106,7 +137,7 @@ function AllHooksPage() {
       githubUsername: "richeyphu",
     },
     {
-      desc: "useException - a useless hook to log message as error.",
+      desc: "useLogException - a useless hook to log message as error.",
       examples: [
         {
           code: `useLogException("An error is occured")`,
@@ -329,6 +360,16 @@ function AllHooksPage() {
       githubUsername: "ronnapatp",
     },
     {
+      desc: "useException - throw an exception with arguments",
+      examples: [
+        {
+          code: `const throwException = useException()`,
+          value: <UseExceptionExampleComponent />,
+        },
+      ],
+      githubUsername: "tomerk97",
+    },
+    {
       desc: "useUndefined - a useless hook that returns undefined.",
       examples: [
         {
@@ -338,8 +379,70 @@ function AllHooksPage() {
       ],
       githubUsername: "armsasmart",
     },
-  ] // Add your own hooks usage above this comment (at the end of the list)
-  // Create a new component if your hook needs more customization
+    {
+      desc: "useDontKnow - We don't know anything in this universe !!",
+      examples: [
+        {
+          code: `const message = useDontKnow()`,
+          value: `Do you know about flooding situation ? ${useDontKnow()}`,
+        },
+      ],
+      githubUsername: "sikkapat79",
+    },
+    {
+      desc: "useFreeze - just in case you need your react app to freeze",
+      examples: [
+        {
+          code: `useFreeze(() => console.log('Hello Antarctica'))`,
+          value: (
+            <button
+              onClick={() => {
+                useFreeze(() => "Sike")
+              }}
+            >
+              I kid you not
+            </button>
+          ),
+        },
+      ],
+      githubUsername: "pknn",
+    },
+    {
+      desc: "useCoinTossRickRoll - returns a string, 50/50 chance of returning Never gonna give you up youtube url",
+      examples: [
+        {
+          value: <a href={useCoinTossRickRoll()}>Click me</a>,
+          code: "const url = useCoinTossRickRoll()",
+        },
+      ],
+      githubUsername: "DrowningToast",
+    },
+    {
+      desc: "useThanos - remove half of elements by the query selector",
+      examples: [
+        {
+          code: `const snap = useThanos();snap(".App > div > *")`,
+          value: (
+            <button
+              onClick={() => {
+                useThanos()(".App > div > *")
+              }}
+            >
+              Snap
+            </button>
+          ),
+        },
+      ],
+      githubUsername: "ntsd",
+    },
+  ] // DON'T ADD ANY CODE HERE. ALL THESE HOOKS WILL BE MIGRATED TO src/hooks-usage SOON
+
+  const hooksUsageComponents = Object.entries(allHooksUsage).map(
+    ([_path, module]) => {
+      const component = (module as any).default
+      return component as () => JSX.Element
+    }
+  )
 
   return (
     <div className="App">
@@ -351,8 +454,19 @@ function AllHooksPage() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
       <h1 className="text-center">React Useless Hooks</h1>
-      <h2 className="text-center">({hooks.length} hooks)</h2>
+      <p className="text-center">
+        We have {hooks.length + hooksUsageComponents.length} useless hooks, and
+        counting...
+      </p>
+
+      {/* New hooks usage components automatically loaded from src/hooks-usage */}
+      {hooksUsageComponents.map((element, idx) => {
+        return <Fragment key={idx}>{element()}</Fragment>
+      })}
+
+      {/* Legacy hooks from "hooks" array */}
       {hooks.map((props: CardProps, idx) => {
         return <Card key={idx} {...props} />
       })}
@@ -384,4 +498,4 @@ function AllHooksPage() {
   )
 }
 
-export default AllHooksPage
+export default App
