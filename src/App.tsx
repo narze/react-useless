@@ -33,6 +33,7 @@ import { useUndefined } from "./hooks/useUndefined"
 import { useAscii } from "./hooks/useAscii"
 import { useDontKnow } from "./hooks/useDontKnow"
 import { useFreeze } from "./hooks/useFreeze"
+import { useThanos } from "./hooks/useThanos"
 
 const UseWeirdExampleComponent = () => {
   return (
@@ -392,6 +393,24 @@ function App() {
         }
       ],
       githubUsername: "pknn",
+    },
+    {
+      desc: "useThanos - remove half of elements by the query selector",
+      examples: [
+        {
+          code: `const snap = useThanos();snap(".App > div > *")`,
+          value: (
+            <button
+              onClick={() => {
+                useThanos()(".App > div > *")
+              }}
+            >
+              Snap
+            </button>
+          ),
+        },
+      ],
+      githubUsername: "ntsd",
     },
   ] // Add your own hooks usage above this comment (at the end of the list)
   // Create a new component if your hook needs more customization
