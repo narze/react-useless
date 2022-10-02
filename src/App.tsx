@@ -461,7 +461,10 @@ function App() {
       </div>
 
       <h1>React Useless Hooks</h1>
-      <h2>({hooks.length} hooks)</h2>
+      <p>
+        We have {hooks.length + hooksUsageComponents.length} useless hooks, and
+        counting...
+      </p>
 
       {/* New hooks usage components automatically loaded from src/hooks-usage */}
       {hooksUsageComponents.map((element, idx) => {
