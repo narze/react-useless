@@ -7,11 +7,11 @@ export default function () {
     examples: [
       { code: "const value = useThink()", value: useThink() },
       {
-        code: "const anotherValue = useThink()",
+        code: "const value = useThink()",
         value: useThink(),
       },
     ],
-    githubUsername: "narze",
+    githubUsername: "k0nji",
   }
 
   return <Card {...cardProps} />
