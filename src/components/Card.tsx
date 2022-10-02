@@ -23,7 +23,11 @@ const Card = ({ desc, examples, githubUsername }: CardProps) => {
             </div>
           )
         } else {
-          return <>{example}</>
+          return (
+            <div key={idx}>
+              <>{example}</>
+            </div>
+          )
         }
       })}
       {githubUsername ? (

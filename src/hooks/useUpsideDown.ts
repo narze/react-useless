@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 type Result = [(element: HTMLElement | null) => void, () => void]
 
 export const useUpsideDown = (): Result => {
-  const state = useRef<HTMLElement |undefined>()
+  const state = useRef<HTMLElement | undefined>()
   const [rotated, setRotated] = useState<boolean>(false)
 
   const ref = (node: HTMLElement | null) => {
@@ -12,8 +12,8 @@ export const useUpsideDown = (): Result => {
   }
 
   useEffect(() => {
-    if (!state.current) return;
-    
+    if (!state.current) return
+
     state.current.style.transition = "transform 1s"
     state.current.style.transform = `rotate(${rotated ? 180 : 0}deg)`
   }, [rotated])
