@@ -1,7 +1,11 @@
-import {useEffect} from 'react'
+import { useEffect } from "react";
 
-export  const useDoubleEffect = () => {
-  useEffect(() => {}, []);
+export const useDoubleEffect = (callback: any, dep: any[]) => {
+  useEffect(() => {
+    callback();
+  }, dep);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    callback();
+  }, dep);
 };
