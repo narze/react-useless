@@ -3,14 +3,14 @@ import { useReverseString } from "../hooks/useReverseString"
 
 export default function () {
   const cardProps = {
-    desc: "useReveseString - a useReveseString hook that returns reverse value.",
+    desc: "useReverseString - a useReverseString hook that returns reverse value.",
     examples: [
       {
-        code: 'const value = useReveseString("yellow")',
+        code: 'const value = useReverseString("yellow")',
         value: useReverseString("yellow"),
       },
       {
-        code: 'const anotherValue = useReveseString("yellow")',
+        code: 'const anotherValue = useReverseString("yellow")',
         value: useReverseString("yellow"),
       },
     ],
