@@ -16,7 +16,6 @@ import { useEven } from "../hooks/useEven/useEven"
 import { useException } from "../hooks/useException"
 import { useFreeze } from "../hooks/useFreeze"
 import { useFullStop } from "../hooks/useFullStop"
-import { useGoogle } from "../hooks/useGoogle"
 import { useLogException } from "../hooks/useLogException"
 import { useLongerState } from "../hooks/useLongerState"
 import { usePKazuya } from "../hooks/usePKazuya"
@@ -27,7 +26,6 @@ import { useSalim } from "../hooks/useSalim"
 import { useSkoy } from "../hooks/useSkoy"
 import { useSmile } from "../hooks/useSmile"
 import { useSus } from "../hooks/useSus"
-import { useThanos } from "../hooks/useThanos"
 import { useTruthy } from "../hooks/useTruthy"
 import { useUndefined } from "../hooks/useUndefined"
 import { useWeird } from "../hooks/useWeird"
@@ -314,24 +312,6 @@ function App() {
       githubUsername: "MasterIceZ",
     },
     {
-      desc: "useGoogle - use google please",
-      examples: [
-        {
-          code: `const googling = useGoogle()`,
-          value: (
-            <button
-              onClick={() => {
-                useGoogle()("Rickroll")
-              }}
-            >
-              Google this
-            </button>
-          ),
-        },
-      ],
-      githubUsername: "ntsd",
-    },
-    {
       desc: "useAscii - useAscii(...)",
       examples: [
         {
@@ -416,24 +396,6 @@ function App() {
         },
       ],
       githubUsername: "DrowningToast",
-    },
-    {
-      desc: "useThanos - remove half of elements by the query selector",
-      examples: [
-        {
-          code: `const snap = useThanos();snap(".App > div > *")`,
-          value: (
-            <button
-              onClick={() => {
-                useThanos()(".App > div > *")
-              }}
-            >
-              Snap
-            </button>
-          ),
-        },
-      ],
-      githubUsername: "ntsd",
     },
   ] // DON'T ADD ANY CODE HERE. ALL THESE HOOKS WILL BE MIGRATED TO src/hooks-usage SOON
 
