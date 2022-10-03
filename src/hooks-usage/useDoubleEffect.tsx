@@ -10,7 +10,7 @@ export default function () {
                 console.log("Hi React");
               }, []);`,
         value: useDoubleEffect(() => {
-          "Hi react"
+          console.log("Hi react")
         }, []),
       },
     ],
