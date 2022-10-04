@@ -107,6 +107,12 @@ button:focus-visible {
   @apply mockup-code bg-[#1a1a1a];
 }
 
+.App[data-theme="light"] .code-block {
+  @apply mockup-code bg-[#1a1a1a];
+  background-color: #f1f1f1;
+  color: #213547;
+}
+
 .docs-wrapper {
   @apply flex flex-col gap-8;
 }
@@ -130,4 +136,14 @@ button:focus-visible {
 .App[data-theme="dark"] button.btn-theme-swtich {
   background-color: #f9f9f9;
   color: #213547;
+}
+
+::-webkit-scrollbar {
+  border-radius: 1rem;
+  background-color: #d5d5d5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #888;
 }
