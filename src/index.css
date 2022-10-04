@@ -12,15 +12,14 @@
   --card-bg-color: #1e1e1e;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color: #213547;
-    --bg-color: #fff;
-    --a-color: #646cff;
-    --a-color--hover: #747bff;
-    --code-color: #fff;
-    --card-bg-color: #f1f1f1;
-  }
+:root[data-theme="light"],
+.App[data-theme="light"] {
+  --color: #213547;
+  --bg-color: #fff;
+  --a-color: #646cff;
+  --a-color--hover: #747bff;
+  --code-color: #fff;
+  --card-bg-color: #f1f1f1;
 }
 
 /* css */
@@ -92,17 +91,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+:root[data-theme="light"],
+.App[data-theme="light"] {
+  color: #213547;
+  background-color: #ffffff;
+}
+.App[data-theme="light"] a:hover {
+  color: #747bff;
+}
+.App[data-theme="light"] button {
+  background-color: #f9f9f9;
 }
 
 .code-block {
@@ -123,3 +121,13 @@ button:focus-visible {
   text-transform: initial;
 }
 /* ---------------- */
+
+.App[data-theme="light"] button.btn-theme-swtich {
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.App[data-theme="dark"] button.btn-theme-swtich {
+  background-color: #f9f9f9;
+  color: #213547;
+}
