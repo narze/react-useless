@@ -137,3 +137,13 @@ button:focus-visible {
   background-color: #f9f9f9;
   color: #213547;
 }
+
+::-webkit-scrollbar {
+  border-radius: 1rem;
+  background-color: #d5d5d5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #888;
+}
