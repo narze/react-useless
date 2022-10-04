@@ -107,6 +107,12 @@ button:focus-visible {
   @apply mockup-code bg-[#1a1a1a];
 }
 
+.App[data-theme="light"] .code-block {
+  @apply mockup-code bg-[#1a1a1a];
+  background-color: #f1f1f1;
+  color: #213547;
+}
+
 .docs-wrapper {
   @apply flex flex-col gap-8;
 }
