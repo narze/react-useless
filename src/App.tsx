@@ -52,7 +52,7 @@ function App() {
     <BrowserRouter>
       <div className="App" data-theme={theme}>
         <div className="absolute z-20 right-5 top-2">
-          <button className="btn-theme-swtich" onClick={(e) => themeToggle()}>
+          <button className="btn-theme-switch" onClick={(e) => themeToggle()}>
             {icon}
           </button>
         </div>
