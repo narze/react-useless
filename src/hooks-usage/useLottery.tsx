@@ -38,7 +38,7 @@ export default function () {
         }),
       },
     ],
-    githubUsername: "yourGithubUsername",
+    githubUsername: "boatnoodle",
   }
 
   return <Card {...cardProps} />
