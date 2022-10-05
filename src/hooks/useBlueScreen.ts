@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react"
-
 type BlueScreen = () => void
 
 export const useBlueScreen = (): BlueScreen => {
