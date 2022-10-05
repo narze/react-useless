@@ -51,7 +51,7 @@ export const useBlueScreen = (): BlueScreen => {
 
       if (percentage >= 100) {
         clearInterval(intervalID)
-        window.location.reload()
+        window.location.href = "/"
       }
 
       percentage += Math.random() * 10
