@@ -4,6 +4,7 @@ import "./App.css"
 import HooksLayout from "./HooksLayout"
 import AllHooksPage from "./pages/AllHooksPage"
 import HomePage from "./pages/HomePage"
+import HookPage from "./pages/HookPage"
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -60,6 +61,7 @@ function App() {
           <Route index element={<HomePage />}></Route>
           <Route path="hooks" element={<HooksLayout />}>
             <Route index element={<AllHooksPage />}></Route>
+            <Route path=":hookName" element={<HookPage />}></Route>
           </Route>
         </Routes>
       </div>

@@ -37,7 +37,7 @@ function HooksLayout() {
       </div>
       <div className="drawer-side">
         <label htmlFor="app-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 text-base-content bg-[#1a1a1a]">
+        <ul className="menu flex-nowrap p-4 overflow-y-auto w-80 text-base-content bg-[#1a1a1a]">
           <AppNavLogo />
           {renderRouteSidebarItems}
         </ul>
