@@ -128,12 +128,12 @@ button:focus-visible {
 }
 /* ---------------- */
 
-.App[data-theme="light"] button.btn-theme-swtich {
+.App[data-theme="light"] button.btn-theme-switch {
   background-color: #1a1a1a;
   color: rgba(255, 255, 255, 0.87);
 }
 
-.App[data-theme="dark"] button.btn-theme-swtich {
+.App[data-theme="dark"] button.btn-theme-switch {
   background-color: #f9f9f9;
   color: #213547;
 }
