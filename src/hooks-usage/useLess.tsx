@@ -1,5 +1,5 @@
 import Card from "../components/Card"
-import { useLess } from "../hooks/useLess/useLess"
+import { useLess } from "../hooks/useLess"
 
 export default function () {
   const cardProps = {
