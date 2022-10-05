@@ -1,19 +1,9 @@
 import { Fragment } from "react"
 import reactLogo from "../assets/react.svg"
-
-// Load all components from src/hooks-usage
-const allHooksUsage = import.meta.glob(
-  ["../hooks-usage/*.tsx", "!../hooks-usage/_TEMPLATE.tsx"],
-  { eager: true }
-)
+import { allHooksUsage } from "../hooks-usage"
 
 function App() {
-  const hooksUsageComponents = Object.entries(allHooksUsage).map(
-    ([_path, module]) => {
-      const component = (module as any).default
-      return component as () => JSX.Element
-    }
-  )
+  const entries = Object.entries(allHooksUsage)
 
   return (
     <div className="App">
@@ -25,12 +15,12 @@ function App() {
 
       <h1 className="text-center">React Useless Hooks</h1>
       <p className="text-center">
-        We have {hooksUsageComponents.length} useless hooks, and counting...
+        We have {entries.length} useless hooks, and counting...
       </p>
 
       {/* New hooks usage components automatically loaded from src/hooks-usage */}
-      {hooksUsageComponents.map((element, idx) => {
-        return <Fragment key={idx}>{element()}</Fragment>
+      {entries.map(([name, Component]) => {
+        return <Component key={name} />
       })}
 
       <div className="card">
