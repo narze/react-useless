@@ -9,7 +9,7 @@ export default function () {
     examples: [
       // 1.) For simple form, just pass the hook's return value
       {
-        code: 'const value = usedRukMaiChaiDuangDaoTeePrawSang("จาวา ไม่ใช่ จาวาสคริปต์")',
+        code: 'const value = useRukMaiChaiDuangDaoTeePrawSang("จาวา ไม่ใช่ จาวาสคริปต์")',
         value: useRukMaiChaiDuangDaoTeePrawSang("จาวา ไม่ใช่ จาวาสคริปต์"),
       },
 
