@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { DefinitelyNotAny } from "./types"
 
-export function usedRukMaiChaiDuangDaoTeePrawSang(
+export function useRukMaiChaiDuangDaoTeePrawSang(
   initialValue: DefinitelyNotAny
 ) {
   const [value, _setValue] = useState(initialValue)
