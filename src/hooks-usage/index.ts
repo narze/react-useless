@@ -5,10 +5,29 @@ const modules = import.meta.glob(
   { eager: true }
 )
 
-export const allHooksUsage: Record<string, React.ComponentType> = {}
+export type Hook = {
+  name: string
+  Component: React.ComponentType
+}
 
-Object.entries(modules).forEach(([path, module]) => {
-  const name = path.match(/^.\/(.+).tsx$/)![1]
-  const component = (module as any).default as React.ComponentType
-  allHooksUsage[name] = component
-})
+export const allHooksUsage: Hook[] = Object.entries(modules)
+  .map(([path, module]) => {
+    const name = path.match(/^.\/(.+).tsx$/)![1]
+    const component = (module as any).default as React.ComponentType
+    return { name, Component: component } as Hook
+  })
+  .sort((hook, anotherHook) => {
+    if (hook.name === "useLess" || anotherHook.name === "paUse") {
+      return -1
+    }
+    if (anotherHook.name === "useLess" || hook.name === "paUse") {
+      return 1
+    }
+    if (hook.name > anotherHook.name) {
+      return 1
+    }
+    if (hook.name < anotherHook.name) {
+      return -1
+    }
+    return 0
+  })
