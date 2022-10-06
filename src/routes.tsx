@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { allHooksUsage } from "./hooks-usage"
+import { allHooksUsage, Hook } from "./hooks-usage"
 
 export const renderRouteSidebarItems = (
   <>
@@ -12,15 +12,15 @@ export const renderRouteSidebarItems = (
         All hooks
       </NavLink>
     </li>
-    {Object.entries(allHooksUsage).map(([name, Component]) => (
-      <li key={name}>
+    {allHooksUsage.map((hook: Hook) => (
+      <li key={hook.name}>
         <NavLink
-          to={`/hooks/${name}`}
+          to={`/hooks/${hook.name}`}
           className={({ isActive }) =>
             `hover:text-white ${isActive && "active"}`
           }
         >
-          {name}
+          {hook.name}
         </NavLink>
       </li>
     ))}

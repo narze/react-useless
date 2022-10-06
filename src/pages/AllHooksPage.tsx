@@ -1,10 +1,8 @@
 import { Fragment } from "react"
 import reactLogo from "../assets/react.svg"
-import { allHooksUsage } from "../hooks-usage"
+import { allHooksUsage, Hook } from "../hooks-usage"
 
 function App() {
-  const entries = Object.entries(allHooksUsage)
-
   return (
     <div className="App">
       <div className="flex justify-center gap-4">
@@ -15,12 +13,12 @@ function App() {
 
       <h1 className="text-center">React Useless Hooks</h1>
       <p className="text-center">
-        We have {entries.length} useless hooks, and counting...
+        We have {allHooksUsage.length} useless hooks, and counting...
       </p>
 
       {/* New hooks usage components automatically loaded from src/hooks-usage */}
-      {entries.map(([name, Component]) => {
-        return <Component key={name} />
+      {allHooksUsage.map((hook: Hook) => {
+        return <hook.Component key={hook.name} />
       })}
 
       <div className="card">
