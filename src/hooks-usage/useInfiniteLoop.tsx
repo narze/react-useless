@@ -20,7 +20,7 @@ function SafetyWrapper() {
 
 export default function () {
   const cardProps = {
-    desc: "useInfiniteLoop - Heat your laptop with infinite loop (sad that it does not crash your app or flood console on prod)",
+    desc: "useInfiniteLoop - Flood console and heat your laptop with infinite loop (sad that it does not crash your app), any component that call this hook is chaos.",
     examples: [
       {
         code: "const Value = useInfiniteLoop()",
