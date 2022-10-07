@@ -2,7 +2,7 @@
 
 import Card from "../components/Card"
 
-import { useLess } from "../hooks/useLess/useLess"
+import { useLess } from "../hooks/useLess"
 import { useSalim } from "../hooks/useSalim"
 
 // Default export a functional component which includes hook's usage

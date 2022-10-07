@@ -52,6 +52,24 @@
   word-break: break-all;
 }
 
+.glow {
+  font-size: 80px;
+  text-align: center;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f7b86f,
+      0 0 40px #f7b86f, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f8dca1, 0 0 40px #f8dca1,
+      0 0 50px #f8dca1, 0 0 60px #f8dca1, 0 0 70px #f8dca1, 0 0 80px #f8dca1;
+  }
+}
+
 /* TODO: unused code / can be remove */
 .read-the-docs {
   color: #888;

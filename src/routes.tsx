@@ -1,19 +1,5 @@
-import { NavLink, Route } from "react-router-dom"
-import UseCuteAndFunnyDocs from "./hooks/useCuteAndFunny/useCuteAndFunny.docs"
-import UseEvenDocs from "./hooks/useEven/useEven.docs"
-import UseLessDocs from "./hooks/useLess/useLess.docs"
-import UseVoidDocs from "./hooks/useVoid/useVoid.docs"
-
-const hookRoutes: { [key: string]: JSX.Element } = {
-  useCuteAndFunny: <UseCuteAndFunnyDocs />,
-  useLess: <UseLessDocs />,
-  useEven: <UseEvenDocs />,
-  useVoid: <UseVoidDocs />,
-}
-
-export const renderHookRoutes = Object.keys(hookRoutes).map((hookName) => (
-  <Route key={hookName} path={hookName} element={hookRoutes[hookName]}></Route>
-))
+import { NavLink } from "react-router-dom"
+import { allHooksUsage, Hook } from "./hooks-usage"
 
 export const renderRouteSidebarItems = (
   <>
@@ -26,15 +12,15 @@ export const renderRouteSidebarItems = (
         All hooks
       </NavLink>
     </li>
-    {Object.keys(hookRoutes).map((hookName) => (
-      <li key={hookName}>
+    {allHooksUsage.map((hook: Hook) => (
+      <li key={hook.name}>
         <NavLink
-          to={hookName}
+          to={`/hooks/${hook.name}`}
           className={({ isActive }) =>
             `hover:text-white ${isActive && "active"}`
           }
         >
-          {hookName}
+          {hook.name}
         </NavLink>
       </li>
     ))}
