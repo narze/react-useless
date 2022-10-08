@@ -1,3 +1,3 @@
 export function useChanochaBigBrainCells(): number {
-  return 84000 * 1000000
+  return 840000 * 1000000
 }
