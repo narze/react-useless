@@ -12,17 +12,6 @@ export default function () {
         code: "const value = useChanochaBigBrainCells()",
         value: useChanochaBigBrainCells(),
       },
-
-      // Or 2.), use function component form for more complex example with buttons
-      () => {
-        const value = useChanochaBigBrainCells()
-
-        return (
-          <>
-            <div>value: {value}</div>
-          </>
-        )
-      },
     ],
     githubUsername: "nonkung51",
   }
