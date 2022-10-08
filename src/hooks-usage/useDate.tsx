@@ -3,10 +3,10 @@ import { useDate } from "../hooks/useDate"
 
 export default function () {
   const cardProps = {
-    desc: "useTime - Returns the current Date",
+    desc: "useDate - Returns the current Date",
     examples: [
       {
-        code: `const value = useTime()`,
+        code: `const value = useDate()`,
         value: `${useDate()}`,
       },
     ],

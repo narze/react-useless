@@ -3,7 +3,7 @@ import { useDittoConga } from "../hooks/useDittoConga"
 
 export default function () {
   const cardProps = {
-    desc: "useYoutube - listen your favorite song on youtube",
+    desc: "useDittoConga - shake your body baby",
     examples: [
       {
         code: `const ditto = useDittoConga();`,
