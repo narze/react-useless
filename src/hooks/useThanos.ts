@@ -14,11 +14,11 @@ export function useThanos() {
       elements[toRemove].setAttribute(
         "style",
         `
-                visibility: hidden;
-                opacity: 0;
-                filter: blur(0.05em) contrast(145%) brightness(650%);
-                transition: filter 2s linear, visibility 0s 2s, opacity 2s linear;
-            `
+          visibility: hidden;
+          opacity: 0;
+          filter: blur(0.05em) contrast(145%) brightness(650%);
+          transition: filter 2s linear, visibility 0s 2s, opacity 2s linear;
+        `
       )
       elements.splice(toRemove, 1)
       disappeared++
