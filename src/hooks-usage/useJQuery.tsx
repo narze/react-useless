@@ -1,5 +1,5 @@
 import Card from "../components/Card"
-import { useJQuery } from "../hooks/useJQuery"
+import { useJQuery } from "../hooks/useJQueryx"
 
 // Default export a functional component which includes hook's usage
 // You can use our Card component or roll your own container component
