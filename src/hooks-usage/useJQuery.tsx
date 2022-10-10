@@ -1,8 +1,6 @@
 import Card from "../components/Card"
-import { useJQuery } from "../hooks/useJQueryx"
+import { useJQuery } from "../hooks/useJQuery"
 
-// Default export a functional component which includes hook's usage
-// You can use our Card component or roll your own container component
 export default function () {
   const cardProps = {
     desc: "useJQuery - but returning a jQuery object is too useful. It returns element selected by selector instead",
