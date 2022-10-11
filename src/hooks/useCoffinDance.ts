@@ -18,52 +18,14 @@ const FREQ_NOTES = {
   C5: 523.25,
 }
 
-/**
- * C4 * 4
-E4 * 4
-D4 * 4
-G4 * 4
-A4 * 13
-D4
-C4
-B3
-G3
-A3
-A3
-E4
-D4
-C4
-B3
-B3
-B3
---------------------------------
-D4
-C4
-B3
-A3
-A3
-C5
-B4
-C5
-B4
-C5
-A3
-A3
-C5
-B4
-C5
-B4
-C5
- */
-
 // Credit note to https://www.youtube.com/watch?v=Zz_44JGiIuI
-// And thanks to github copilot for the code
+// And thanks to github copilot for generating code
 const NOTES: Array<[keyof typeof FREQ_NOTES, number, number]> = [
   ["C4", 4, 0.15],
   ["E4", 4, 0.15],
   ["D4", 4, 0.15],
   ["G4", 4, 0.15],
-  ["A4", 11, 0.15],
+  ["A4", 12, 0.15],
   ["D4", 1, 0.15],
   ["C4", 1, 0.15],
   ["B3", 1, 0.15],
@@ -74,19 +36,17 @@ const NOTES: Array<[keyof typeof FREQ_NOTES, number, number]> = [
   ["D4", 1, 0.35],
   ["C4", 1, 0.35],
   ["B3", 1, 0.35],
-  ["B3", 2, 0.15],
-  ["D4", 1, 0.15],
-  ["C4", 1, 0.15],
+  ["B3", 2, 0.2],
+  ["D4", 1, 0.2],
+  ["C4", 1, 0.2],
   ["B3", 1, 0.15],
-  ["A3", 1, 0.15],
-  ["A3", 1, 0.15],
+  ["A3", 2, 0.3],
   ["C5", 1, 0.15],
   ["B4", 1, 0.15],
   ["C5", 1, 0.15],
-  ["B4", 1, 0.15],
+  ["B4", 1, 0.2],
   ["C5", 1, 0.15],
-  ["A3", 1, 0.15],
-  ["A3", 1, 0.15],
+  ["A3", 2, 0.3],
   ["C5", 1, 0.15],
   ["B4", 1, 0.15],
   ["C5", 1, 0.15],
