@@ -16,11 +16,11 @@ const CoffinDanceController = () => {
 // You can use our Card component or roll your own container component
 export default function () {
   const cardProps = {
-    desc: "useCoffinDanceNote - returns function that will play or stop coffin dance",
+    desc: "useCoffinDance - returns function that will play or stop coffin dance",
     examples: [
       // 1.) For simple form, just pass the hook's return value
       {
-        code: "const value = useCoffinDance()",
+        code: "const [play, stop] = useCoffinDance()",
         value: <CoffinDanceController />,
       },
     ],
