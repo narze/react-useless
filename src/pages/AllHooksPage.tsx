@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import React, { Fragment, Suspense } from "react"
 import reactLogo from "../assets/react.svg"
 import { allHooksUsage, Hook } from "../hooks-usage"
 
@@ -18,7 +18,14 @@ function App() {
 
       {/* New hooks usage components automatically loaded from src/hooks-usage */}
       {allHooksUsage.map((hook: Hook) => {
-        return <hook.Component key={hook.name} />
+        const HookComponent = React.lazy(
+          () => import(`../hooks-usage/${hook.name}.tsx`)
+        )
+        return (
+          <Suspense fallback={<div>Loading...</div>}>
+            <HookComponent key={hook.name} />
+          </Suspense>
+        )
       })}
 
       <div className="card">
