@@ -3,10 +3,10 @@ import { useCountdown } from "../hooks/useCountdown"
 
 export const UseCountdown = () => {
   const max_range = 5
-  const [value, subtrahend, handleClick] = useCountdown(max_range)
+  const [value, handleClick] = useCountdown(max_range)
   return (
     <>
-      {value} - {subtrahend}
+      {value}
       <div>
         <button className="hover:ring-1" onClick={handleClick}>
           Click Me 😏
@@ -21,7 +21,7 @@ export default function () {
     desc: "useCountdown - a hook that returns a current number counting down to 0 but it won't reach zero",
     examples: [
       {
-        code: "const [value, hanldeClick] = useCountdown(5)",
+        code: "const [value, handleClick] = useCountdown(5)",
         value: <UseCountdown />,
       },
     ],
