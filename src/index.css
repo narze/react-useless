@@ -67,7 +67,15 @@ h1 {
   line-height: 1.1;
 }
 
+.card > * {
+  @apply pb-2;
+}
+h2 {
+  @apply text-xl font-bold;
+}
+
 code {
+  @apply p-3 block rounded mb-2;
   background: var(--code-color);
 }
 
@@ -79,7 +87,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #000;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -100,7 +108,7 @@ button:focus-visible {
   color: #747bff;
 }
 .App[data-theme="light"] button {
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 
 .code-block {
