@@ -1,8 +1,21 @@
-import React, { Fragment, Suspense } from "react"
+import React, { Suspense } from "react"
+import { useSpring, animated, easings } from "react-spring"
 import reactLogo from "../assets/react.svg"
 import { allHooksUsage, Hook } from "../hooks-usage"
 
 function App() {
+  const props = useSpring({
+    val: allHooksUsage.length,
+    from: { val: 1 },
+    config: { duration: 2500, easing: easings.easeOutCubic },
+  })
+
+  const hookCounting = (
+    <animated.span className="number">
+      {props.val.to((val) => Math.floor(val))}
+    </animated.span>
+  )
+
   return (
     <div className="App">
       <div className="flex justify-center gap-4">
@@ -11,9 +24,9 @@ function App() {
         </a>
       </div>
 
-      <h1 className="text-center">React Useless Hooks</h1>
-      <p className="text-center">
-        We have {allHooksUsage.length} useless hooks, and counting...
+      <h1 className="text-center app-title">React Useless Hooks</h1>
+      <p className="text-center font-bold opacity-60">
+        We have {hookCounting} useless hooks, and counting...
       </p>
 
       {/* New hooks usage components automatically loaded from src/hooks-usage */}
