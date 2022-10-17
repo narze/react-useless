@@ -5,7 +5,7 @@ import { useAsciiSpinner } from "../hooks/useAsciiSpinner"
 // You can use our Card component or roll your own container component
 export default function () {
   const cardProps = {
-    desc: "useAsciiSpinner - returns something yada yada yada",
+    desc: "useAsciiSpinner - return animation ascii spinner",
     examples: [
       // 1.) For simple form, just pass the hook's return value
       {
@@ -24,7 +24,7 @@ export default function () {
         )
       },
     ],
-    githubUsername: "YOUR_GITHUB_USERNAME",
+    githubUsername: "vavar",
   }
 
   return <Card {...cardProps} />
