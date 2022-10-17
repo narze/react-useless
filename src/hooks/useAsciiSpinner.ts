@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 const frames = `\\-/|`.split("")
-// const frames = '▙▛▜▟'.split('')
-// const frames = '▤▧▥▨'.split('')
-// const frames = '◴◵◶◷'.split('')
-// const frames = '◩◪'.split('')
-// const frames = '◰◱◲◳'.split('')
-// const frames = '◐◓◑◒'.split('')
+// const frames = `▙▛▜▟`.split("")
+// const frames = `▤▧▥▨`.split("")
+// const frames = `◴◵◶◷`.split("")
+// const frames = `◩◪`.split("")
+// const frames = `◰◱◲◳`.split("")
+// const frames = `◐◓◑◒`.split("")
 
 export const useAsciiSpinner = (duration: number = 600) => {
   const [frame, setFrame] = useState<number>(0)
