@@ -1,15 +1,11 @@
 import { ChangeEvent, useState } from "react"
 import Card from "../components/Card"
+import { useChanOCha } from "../hooks/useChanOCha"
 
 export default function () {
   const [lovedOne, setLovedOne] = useState<string>()
+  const name = useChanOCha(lovedOne)
   const [submit, setSubmit] = useState<boolean>(false)
-  const lName = "Chan-o-cha"
-
-  const cfLetter = (str: string | undefined) => {
-    if (!str) return ""
-    return str.charAt(0).toUpperCase() + str.slice(1)
-  }
 
   const handleTyping = (e: ChangeEvent<HTMLInputElement>) => {
     setLovedOne(e.target.value)
@@ -46,8 +42,7 @@ export default function () {
         >
           Congrats's your loved are{" "}
           <span style={{ color: "#bc2bb7", fontWeight: "bold" }}>
-            {" "}
-            🎉🎉 {cfLetter(lovedOne)} {lName} 🥳🥳
+            🎉🎉 {name} 🥳🥳
           </span>
         </div>
       )}
