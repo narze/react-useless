@@ -7,7 +7,7 @@ const ArmageddonCard = () => {
   return (
     <>
       <button title="DANGER" onClick={value}>
-        &#160;&#160;&#160;&#160;&#160;
+        Empty
       </button>
     </>
   )
@@ -15,7 +15,7 @@ const ArmageddonCard = () => {
 
 export default function () {
   const cardProps = {
-    desc: "useArmageddon - ",
+    desc: "useArmageddon - No more HTML",
     examples: [
       {
         code: "const value = useArmageddon()",
