@@ -5,7 +5,7 @@ import { useSadSong } from "../hooks/useSadSong"
 // You can use our Card component or roll your own container component
 export default function () {
   const cardProps = {
-    desc: "useSadSong - returns something yada yada yada",
+    desc: "useSadSong - Play your favorite sad song",
     examples: [
       () => {
         const sadSong = useSadSong()
