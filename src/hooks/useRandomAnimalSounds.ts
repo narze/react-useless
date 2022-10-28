@@ -29,7 +29,7 @@ const animalList = [
   },
 ]
 
-export function useAnimalSounds() {
+export function useRandomAnimalSounds() {
   var randomAnimal = animalList[Math.floor(Math.random() * animalList.length)]
   var animal = {
     name: randomAnimal.name,

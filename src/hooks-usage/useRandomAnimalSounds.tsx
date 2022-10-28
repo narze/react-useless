@@ -1,8 +1,8 @@
 import Card from "../components/Card"
-import { useAnimalSounds } from "../hooks/useRandomAnimalSounds"
+import { useRandomAnimalSounds } from "../hooks/useRandomAnimalSounds"
 import { useState } from "react"
 
-const UseAnimalSounds = () => {
+const UseRandomAnimalSounds = () => {
   var initAnimal = {
     name: "",
     url: "",
@@ -10,7 +10,7 @@ const UseAnimalSounds = () => {
   const [animal, setAnimal] = useState(initAnimal)
   return (
     <div>
-      <button onClick={() => setAnimal(useAnimalSounds)}>
+      <button onClick={() => setAnimal(useRandomAnimalSounds)}>
         Random Animal Sound
       </button>
       {animal.name != "" && (
@@ -32,8 +32,8 @@ export default function () {
     desc: "useAnimalSounds - returns audio with animal sound",
     examples: [
       {
-        code: "const animalSound = useAnimalSounds()",
-        value: <UseAnimalSounds />,
+        code: "const animalSound = useRandomAnimalSounds()",
+        value: <UseRandomAnimalSounds />,
       },
     ],
     githubUsername: "T-Khanittha",
