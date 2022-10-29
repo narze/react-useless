@@ -1,7 +1,7 @@
 const animalList = [
   {
     name: "Frog",
-    url: "https://thecyberbuddy.com/sounds/frog.wav",
+    url: "http://thecyberbuddy.com/sounds/frog.wav",
   },
   {
     name: "Dog",

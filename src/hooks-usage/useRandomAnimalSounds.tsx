@@ -14,13 +14,10 @@ const UseRandomAnimalSounds = () => {
         Random Animal Sound
       </button>
       {animal.name != "" && (
-        <div style={{ textAlign: "center" }}>
-          <h3>{animal.name}</h3>
-          <audio
-            src={animal.url}
-            style={{ width: "100%", marginTop: "20px" }}
-            controls
-          ></audio>
+        <div style={{ textAlign: "center", margin: "20px" }}>
+          <a href={animal.url} target="_blank" rel="noopener noreferrer">
+            Click to listen {animal.name}'s sound
+          </a>
         </div>
       )}
     </div>
