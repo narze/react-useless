@@ -4,14 +4,17 @@ import { useState } from "react"
 
 // Default export a functional component which includes hook's usage
 // You can use our Card component or roll your own container component
+type Layouts =
+  | "Kedmanee"
+  | "Pattachote"
+  | "Manoonchai"
+  | "Qwerty"
+  | "Dvorak"
+  | "Colemak"
 const UseWrongLangExample = () => {
   const [text, setText] = useState<string>("")
-  const [primary, setPrimary] = useState<
-    "Kedmanee" | "Pattachote" | "Manoonchai"
-  >("Kedmanee")
-  const [secondary, setSecondary] = useState<"Qwerty" | "Dvorak" | "Colemak">(
-    "Qwerty"
-  )
+  const [primary, setPrimary] = useState<Layouts>("Kedmanee")
+  const [secondary, setSecondary] = useState<Layouts>("Qwerty")
   const value = useWrongLang(primary, secondary, text)
 
   return (
