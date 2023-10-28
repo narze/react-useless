@@ -1,6 +1,6 @@
 # React Useless Hooks
 
-A collection of [React Custom Hooks](https://reactjs.org/docs/hooks-custom.html) that should not belong anywhere.
+A collection of [React Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) that should not belong anywhere.
 
 ## Hacktoberfest
 
